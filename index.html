@@ -1,97 +1,1545 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101114">
-<title>ProCode — Full Stack Development, Built for Your First Job</title>
-<meta name="description" content="Affordable online Full Stack Development training for college students and freshers. Build real projects, prepare for interviews, and grow job-ready skills.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#101114;--panel:#17191e;--panel2:#1d2026;--text:#f4f3ef;--muted:#a5a8b2;--line:#30333b;--lime:#c9fa68;--purple:#a69bff;--radius:22px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.announcement{background:var(--lime);color:#171914;text-align:center;font-size:12px;font-weight:800;padding:9px 14px;letter-spacing:.03em}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #25272d;position:sticky;top:0;background:rgba(16,17,20,.9);backdrop-filter:blur(18px);z-index:20}.brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;letter-spacing:-.05em}.brandmark{width:32px;height:32px;background:var(--lime);color:#111;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:18px}.navlinks{display:flex;align-items:center;gap:26px;color:#c0c2c9;font-size:13px;font-weight:700}.navlinks a:hover{color:var(--lime)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:13px 20px;font-size:13px;font-weight:800;cursor:pointer;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--lime);color:#141611}.btn-primary:hover{background:#d9ff9b}.btn-ghost{border:1px solid #41434a;background:transparent;color:var(--text)}.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 11px}
-.hero{padding:86px 0 72px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:460px;height:460px;border-radius:50%;background:#8b7cff12;filter:blur(50px);top:0;right:-140px;pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:55px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #3b3e43;border-radius:999px;padding:7px 12px;color:#d4d6dc;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 12px #c9fa68a0}.hero h1{font-size:clamp(42px,5.5vw,72px);line-height:1.04;letter-spacing:-.065em;margin:22px 0;max-width:650px}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{font-size:16px;color:var(--muted);max-width:510px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.microproof{display:flex;align-items:center;gap:13px;margin-top:29px;color:#b6b8c0;font-size:11px}.avatars{display:flex}.avatars span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#35313f;border:2px solid var(--bg);margin-left:-6px;font-size:10px}.avatars span:first-child{margin-left:0;background:#46402f}.hero-note{font-size:11px;color:var(--muted)}.editor{border:1px solid #363941;border-radius:20px;overflow:hidden;background:#15171b;box-shadow:0 30px 90px #0008;transform:rotate(1deg)}.editor-top{height:45px;display:flex;align-items:center;gap:7px;padding:0 15px;border-bottom:1px solid #2a2d34;color:#9fa2ac;font:11px "DM Mono",monospace}.traffic{width:8px;height:8px;border-radius:50%;background:#ff7777}.traffic:nth-child(2){background:#ffcf6b}.traffic:nth-child(3){background:#8ee18a}.file{margin-left:13px}.editor-body{padding:23px;font:12px/2 "DM Mono",monospace;color:#c3c6d0}.code-line{display:flex;gap:19px;white-space:pre}.ln{color:#656975;user-select:none}.pink{color:#e9a1ff}.blue{color:#8bc8ff}.green{color:#c9fa68}.orange{color:#ffcb8b}.code-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2a2d34;padding:12px 16px;color:#a4a7b1;font:10px "DM Mono",monospace}.status{color:var(--lime)}.float-card{position:absolute;right:-22px;bottom:36px;background:#24272d;border:1px solid #454851;border-radius:14px;padding:14px 17px;box-shadow:0 14px 35px #0006;transform:rotate(-3deg)}.float-card strong{display:block;font-size:12px}.float-card small{color:#aeb1ba;font-size:10px}.float-card .check{color:var(--lime);margin-right:5px}
-.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:23px 0}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.stat{padding-left:23px;border-left:1px solid var(--line)}.stat:first-child{border:0;padding-left:0}.stat strong{display:block;font-size:18px;letter-spacing:-.04em}.stat span{color:var(--muted);font-size:11px}
-section{padding:88px 0}.section-hThe linkead{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:36px}.kicker{color:var(--lime);font:11px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase}.section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.055em;margin:10px 0 0;max-width:650px}.section-head p{max-width:360px;color:var(--muted);font-size:13px;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:var(--panel);border:1px solid #2b2e35;border-radius:var(--radius);padding:25px;min-height:220px}.iconbox{height:43px;width:43px;display:grid;place-items:center;border-radius:13px;background:#c9fa6816;color:var(--lime);font-size:21px;margin-bottom:23px}.card h3{font-size:17px;margin:0 0 10px;letter-spacing:-.03em}.card p{color:var(--muted);font-size:12px;margin:0}.tag{display:inline-block;color:#d8d2ff;background:#a69bff18;border:1px solid #a69bff30;border-radius:7px;padding:4px 8px;font:10px "DM Mono",monospace;margin-bottom:12px}
-.curriculum{background:#14161a;border-top:1px solid #25272d;border-bottom:1px solid #25272d}.curriculum-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px}.sticky-note{position:sticky;top:115px;align-self:start}.sticky-note h2{font-size:clamp(32px,4vw,45px);line-height:1.1;letter-spacing:-.06em;margin:13px 0}.sticky-note p{color:var(--muted);font-size:13px;max-width:340px}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.pill{border:1px solid #3a3d44;border-radius:8px;padding:7px 10px;color:#c4c6ce;font:10px "DM Mono",monospace}.module{display:grid;grid-template-columns:55px 1fr auto;gap:16px;padding:21px 0;border-bottom:1px solid #303239;align-items:start}.module:first-child{border-top:1px solid #303239}.module-num{color:var(--lime);font:12px "DM Mono",monospace;padding-top:3px}.module h3{margin:0 0 6px;font-size:15px}.module p{margin:0;color:var(--muted);font-size:12px}.weeks{font:10px "DM Mono",monospace;color:#9b9ea8;white-space:nowrap}
-.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.project{background:var(--panel);border:1px solid #2b2e35;border-radius:22px;overflow:hidden}.project-art{height:200px;padding:22px;background:linear-gradient(135deg,#20252a,#1b1b27);position:relative;overflow:hidden}.project-art.purpleart{background:linear-gradient(135deg,#292342,#181a23)}.window{position:absolute;inset:22px 22px -15px;border:1px solid #454851;border-radius:12px;background:#13151ad9;padding:13px;transform:rotate(-2deg)}.window-head{display:flex;gap:5px;border-bottom:1px solid #363943;padding-bottom:10px}.window-head i{width:6px;height:6px;border-radius:50%;background:#777}.mockgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:13px}.mocktile{height:62px;border-radius:7px;background:#292d36;padding:8px}.mocktile b{display:block;width:50%;height:5px;background:var(--lime);border-radius:4px;margin-bottom:8px}.mocktile span{display:block;width:78%;height:4px;background:#555b68;border-radius:4px;margin-top:5px}.chartline{height:48px;margin-top:12px;border-bottom:1px solid #434750;background:linear-gradient(160deg,transparent 40%,#a69bff 41%,#a69bff 43%,transparent 44%),linear-gradient(20deg,transparent 50%,#c9fa68 51%,#c9fa68 53%,transparent 54%)}.project-content{padding:22px}.project-content h3{margin:0 0 8px;font-size:18px}.project-content p{font-size:12px;color:var(--muted);margin:0 0 17px}.tech{display:flex;gap:7px;flex-wrap:wrap}.tech span{font:10px "DM Mono",monospace;border:1px solid #3b3e46;border-radius:6px;padding:5px 8px;color:#c6c8d0}
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.step{border-top:1px solid #41434a;padding-top:18px}.step .num{font:12px "DM Mono",monospace;color:var(--lime)}.step h3{font-size:15px;margin:13px 0 7px}.step p{font-size:12px;color:var(--muted);margin:0}.cta{padding:0 0 85px}.cta-box{padding:48px;border-radius:26px;background:var(--lime);color:#171914;display:flex;justify-content:space-between;align-items:center;gap:25px;position:relative;overflow:hidden}.cta-box:after{content:"</>";position:absolute;right:30%;top:-50px;font:150px "DM Mono",monospace;color:#1111;transform:rotate(-12deg)}.cta-box h2{font-size:clamp(29px,4vw,43px);line-height:1.1;letter-spacing:-.06em;margin:0 0 12px;max-width:560px;position:relative;z-index:1}.cta-box p{font-size:13px;margin:0;max-width:500px;position:relative;z-index:1}.cta-box .btn{background:#171914;color:white;white-space:nowrap;position:relative;z-index:1}
-.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px}.faq-grid h2{font-size:40px;letter-spacing:-.06em;line-height:1.1;margin:12px 0}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;background:none;border:0;color:var(--text);display:flex;justify-content:space-between;align-items:center;text-align:left;padding:20px 0;font-weight:800;font-size:14px;cursor:pointer}.faq-q span:last-child{font-size:21px;color:var(--lime)}.faq-a{display:none;color:var(--muted);font-size:12px;padding:0 25px 20px 0}.faq-item.open .faq-a{display:block}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
-footer{border-top:1px solid var(--line);padding:27px 0 35px;color:var(--muted);font-size:11px}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:18px}.footer-links a:hover{color:var(--lime)}.modal-backdrop{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal-backdrop.show{display:flex}.modal{background:#1a1c21;border:1px solid #42454d;border-radius:22px;padding:28px;width:min(480px,100%);position:relative;box-shadow:0 30px 90px #0009}.modal h2{font-size:26px;letter-spacing:-.05em;margin:0 0 8px}.modal p{color:var(--muted);font-size:12px;margin:0 0 20px}.close{position:absolute;right:18px;top:15px;background:none;border:0;color:#bbb;font-size:24px;cursor:pointer}.field{display:flex;flex-direction:column;gap:6px;margin:12px 0}.field label{font-size:11px;color:#c5c7ce;font-weight:800}.field input,.field select{width:100%;background:#111216;border:1px solid #383b43;border-radius:10px;padding:12px;color:white;outline:none}.field input:focus,.field select:focus{border-color:var(--lime)}.form-note{font-size:10px;color:#9296a1;margin-top:12px}.success{display:none;border:1px solid #52683a;background:#c9fa6810;color:#d9ffab;border-radius:10px;padding:13px;font-size:12px;margin-top:12px}
-@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:42px}.hero{padding-top:62px}.hero-copy{max-width:700px}.hero-visual{max-width:650px}.float-card{right:4px}.curriculum-grid,.faq-grid{grid-template-columns:1fr;gap:35px}.sticky-note{position:static}.cards{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr);row-gap:28px}.section-head{align-items:start;flex-direction:column}.section-head p{max-width:560px}}
-@media(max-width:600px){.wrap{width:min(100% - 30px,1160px)}.nav{height:66px}.navlinks{display:none;position:absolute;top:65px;left:0;right:0;background:#17191e;padding:20px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line);gap:17px}.navlinks.show{display:flex}.navlinks .btn{width:100%}.menu{display:block}.nav>.btn{display:none}.hero{padding:48px 0}.hero h1{font-size:44px}.hero p{font-size:14px}.editor-body{padding:15px 12px;font-size:10px}.code-line{gap:10px}.float-card{bottom:12px;right:0}.stats-grid{grid-template-columns:1fr 1fr;row-gap:22px}.stat:nth-child(3){padding-left:0;border:0}.cards,.project-grid{grid-template-columns:1fr}.card{min-height:auto}.project-art{height:180px}section{padding:65px 0}.module{grid-template-columns:35px 1fr;gap:10px}.weeks{grid-column:2}.process{grid-template-columns:1fr 1fr}.cta-box{padding:30px 24px;align-items:flex-start;flex-direction:column}.cta-box:after{right:4%;top:4px;font-size:100px}.faq-grid h2{font-size:34px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.microproof{align-items:flex-start}.announcement{font-size:10px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101114">
+    <title>ProCode — Full Stack Development, Built for Your First Job</title>
+    <meta name="description"
+        content="Affordable online Full Stack Development training for college students and freshers. Build real projects, prepare for interviews, and grow job-ready skills.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #101114;
+            --panel: #17191e;
+            --panel2: #1d2026;
+            --text: #f4f3ef;
+            --muted: #a5a8b2;
+            --line: #30333b;
+            --lime: #c9fa68;
+            --purple: #a69bff;
+            --radius: 22px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Manrope, system-ui, sans-serif;
+            line-height: 1.55
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit
+        }
+
+        .wrap {
+            width: min(1160px, calc(100% - 40px));
+            margin: auto
+        }
+
+        .announcement {
+            background: var(--lime);
+            color: #171914;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 9px 14px;
+            letter-spacing: .03em
+        }
+
+        .nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #25272d;
+            position: sticky;
+            top: 0;
+            background: rgba(16, 17, 20, .9);
+            backdrop-filter: blur(18px);
+            z-index: 20
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -.05em
+        }
+
+        .brandmark {
+            width: 32px;
+            height: 32px;
+            background: var(--lime);
+            color: #111;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            font-size: 18px
+        }
+
+        .navlinks {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            color: #c0c2c9;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .navlinks a:hover {
+            color: var(--lime)
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 0;
+            border-radius: 999px;
+            padding: 13px 20px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform .2s, background .2s
+        }
+
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .btn-primary {
+            background: var(--lime);
+            color: #141611
+        }
+
+        .btn-primary:hover {
+            background: #d9ff9b
+        }
+
+        .btn-ghost {
+            border: 1px solid #41434a;
+            background: transparent;
+            color: var(--text)
+        }
+
+        .menu {
+            display: none;
+            background: none;
+            border: 1px solid var(--line);
+            color: white;
+            border-radius: 10px;
+            padding: 8px 11px
+        }
+
+        .hero {
+            padding: 86px 0 72px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            width: 460px;
+            height: 460px;
+            border-radius: 50%;
+            background: #8b7cff12;
+            filter: blur(50px);
+            top: 0;
+            right: -140px;
+            pointer-events: none
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.03fr .97fr;
+            align-items: center;
+            gap: 55px;
+            position: relative
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #3b3e43;
+            border-radius: 999px;
+            padding: 7px 12px;
+            color: #d4d6dc;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .09em;
+            text-transform: uppercase
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            background: var(--lime);
+            border-radius: 50%;
+            box-shadow: 0 0 12px #c9fa68a0
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5.5vw, 72px);
+            line-height: 1.04;
+            letter-spacing: -.065em;
+            margin: 22px 0;
+            max-width: 650px
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--lime)
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--muted);
+            max-width: 510px;
+            margin: 0 0 28px
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .microproof {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-top: 29px;
+            color: #b6b8c0;
+            font-size: 11px
+        }
+
+        .avatars {
+            display: flex
+        }
+
+        .avatars span {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #35313f;
+            border: 2px solid var(--bg);
+            margin-left: -6px;
+            font-size: 10px
+        }
+
+        .avatars span:first-child {
+            margin-left: 0;
+            background: #46402f
+        }
+
+        .hero-note {
+            font-size: 11px;
+            color: var(--muted)
+        }
+
+        .editor {
+            border: 1px solid #363941;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #15171b;
+            box-shadow: 0 30px 90px #0008;
+            transform: rotate(1deg)
+        }
+
+        .editor-top {
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 0 15px;
+            border-bottom: 1px solid #2a2d34;
+            color: #9fa2ac;
+            font: 11px "DM Mono", monospace
+        }
+
+        .traffic {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff7777
+        }
+
+        .traffic:nth-child(2) {
+            background: #ffcf6b
+        }
+
+        .traffic:nth-child(3) {
+            background: #8ee18a
+        }
+
+        .file {
+            margin-left: 13px
+        }
+
+        .editor-body {
+            padding: 23px;
+            font: 12px/2 "DM Mono", monospace;
+            color: #c3c6d0
+        }
+
+        .code-line {
+            display: flex;
+            gap: 19px;
+            white-space: pre
+        }
+
+        .ln {
+            color: #656975;
+            user-select: none
+        }
+
+        .pink {
+            color: #e9a1ff
+        }
+
+        .blue {
+            color: #8bc8ff
+        }
+
+        .green {
+            color: #c9fa68
+        }
+
+        .orange {
+            color: #ffcb8b
+        }
+
+        .code-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #2a2d34;
+            padding: 12px 16px;
+            color: #a4a7b1;
+            font: 10px "DM Mono", monospace
+        }
+
+        .status {
+            color: var(--lime)
+        }
+
+        .float-card {
+            position: absolute;
+            right: -22px;
+            bottom: 36px;
+            background: #24272d;
+            border: 1px solid #454851;
+            border-radius: 14px;
+            padding: 14px 17px;
+            box-shadow: 0 14px 35px #0006;
+            transform: rotate(-3deg)
+        }
+
+        .float-card strong {
+            display: block;
+            font-size: 12px
+        }
+
+        .float-card small {
+            color: #aeb1ba;
+            font-size: 10px
+        }
+
+        .float-card .check {
+            color: var(--lime);
+            margin-right: 5px
+        }
+
+        .stats {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 23px 0
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px
+        }
+
+        .stat {
+            padding-left: 23px;
+            border-left: 1px solid var(--line)
+        }
+
+        .stat:first-child {
+            border: 0;
+            padding-left: 0
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 18px;
+            letter-spacing: -.04em
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 11px
+        }
+
+        section {
+            padding: 88px 0
+        }
+
+        .section-hThe linkead {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 25px;
+            margin-bottom: 36px
+        }
+
+        .kicker {
+            color: var(--lime);
+            font: 11px "DM Mono", monospace;
+            letter-spacing: .14em;
+            text-transform: uppercase
+        }
+
+        .section-head h2 {
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.12;
+            letter-spacing: -.055em;
+            margin: 10px 0 0;
+            max-width: 650px
+        }
+
+        .section-head p {
+            max-width: 360px;
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid #2b2e35;
+            border-radius: var(--radius);
+            padding: 25px;
+            min-height: 220px
+        }
+
+        .iconbox {
+            height: 43px;
+            width: 43px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: #c9fa6816;
+            color: var(--lime);
+            font-size: 21px;
+            margin-bottom: 23px
+        }
+
+        .card h3 {
+            font-size: 17px;
+            margin: 0 0 10px;
+            letter-spacing: -.03em
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 12px;
+            margin: 0
+        }
+
+        .tag {
+            display: inline-block;
+            color: #d8d2ff;
+            background: #a69bff18;
+            border: 1px solid #a69bff30;
+            border-radius: 7px;
+            padding: 4px 8px;
+            font: 10px "DM Mono", monospace;
+            margin-bottom: 12px
+        }
+
+        .curriculum {
+            background: #14161a;
+            border-top: 1px solid #25272d;
+            border-bottom: 1px solid #25272d
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            gap: 60px
+        }
+
+        .sticky-note {
+            position: sticky;
+            top: 115px;
+            align-self: start
+        }
+
+        .sticky-note h2 {
+            font-size: clamp(32px, 4vw, 45px);
+            line-height: 1.1;
+            letter-spacing: -.06em;
+            margin: 13px 0
+        }
+
+        .sticky-note p {
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 340px
+        }
+
+        .pillrow {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 22px 0
+        }
+
+        .pill {
+            border: 1px solid #3a3d44;
+            border-radius: 8px;
+            padding: 7px 10px;
+            color: #c4c6ce;
+            font: 10px "DM Mono", monospace
+        }
+
+        .module {
+            display: grid;
+            grid-template-columns: 55px 1fr auto;
+            gap: 16px;
+            padding: 21px 0;
+            border-bottom: 1px solid #303239;
+            align-items: start
+        }
+
+        .module:first-child {
+            border-top: 1px solid #303239
+        }
+
+        .module-num {
+            color: var(--lime);
+            font: 12px "DM Mono", monospace;
+            padding-top: 3px
+        }
+
+        .module h3 {
+            margin: 0 0 6px;
+            font-size: 15px
+        }
+
+        .module p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .weeks {
+            font: 10px "DM Mono", monospace;
+            color: #9b9ea8;
+            white-space: nowrap
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        .project {
+            background: var(--panel);
+            border: 1px solid #2b2e35;
+            border-radius: 22px;
+            overflow: hidden
+        }
+
+        .project-art {
+            height: 200px;
+            padding: 22px;
+            background: linear-gradient(135deg, #20252a, #1b1b27);
+            position: relative;
+            overflow: hidden
+        }
+
+        .project-art.purpleart {
+            background: linear-gradient(135deg, #292342, #181a23)
+        }
+
+        .window {
+            position: absolute;
+            inset: 22px 22px -15px;
+            border: 1px solid #454851;
+            border-radius: 12px;
+            background: #13151ad9;
+            padding: 13px;
+            transform: rotate(-2deg)
+        }
+
+        .window-head {
+            display: flex;
+            gap: 5px;
+            border-bottom: 1px solid #363943;
+            padding-bottom: 10px
+        }
+
+        .window-head i {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #777
+        }
+
+        .mockgrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-top: 13px
+        }
+
+        .mocktile {
+            height: 62px;
+            border-radius: 7px;
+            background: #292d36;
+            padding: 8px
+        }
+
+        .mocktile b {
+            display: block;
+            width: 50%;
+            height: 5px;
+            background: var(--lime);
+            border-radius: 4px;
+            margin-bottom: 8px
+        }
+
+        .mocktile span {
+            display: block;
+            width: 78%;
+            height: 4px;
+            background: #555b68;
+            border-radius: 4px;
+            margin-top: 5px
+        }
+
+        .chartline {
+            height: 48px;
+            margin-top: 12px;
+            border-bottom: 1px solid #434750;
+            background: linear-gradient(160deg, transparent 40%, #a69bff 41%, #a69bff 43%, transparent 44%), linear-gradient(20deg, transparent 50%, #c9fa68 51%, #c9fa68 53%, transparent 54%)
+        }
+
+        .project-content {
+            padding: 22px
+        }
+
+        .project-content h3 {
+            margin: 0 0 8px;
+            font-size: 18px
+        }
+
+        .project-content p {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0 0 17px
+        }
+
+        .tech {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap
+        }
+
+        .tech span {
+            font: 10px "DM Mono", monospace;
+            border: 1px solid #3b3e46;
+            border-radius: 6px;
+            padding: 5px 8px;
+            color: #c6c8d0
+        }
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 13px
+        }
+
+        .step {
+            border-top: 1px solid #41434a;
+            padding-top: 18px
+        }
+
+        .step .num {
+            font: 12px "DM Mono", monospace;
+            color: var(--lime)
+        }
+
+        .step h3 {
+            font-size: 15px;
+            margin: 13px 0 7px
+        }
+
+        .step p {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .cta {
+            padding: 0 0 85px
+        }
+
+        .cta-box {
+            padding: 48px;
+            border-radius: 26px;
+            background: var(--lime);
+            color: #171914;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .cta-box:after {
+            content: "</>";
+            position: absolute;
+            right: 30%;
+            top: -50px;
+            font: 150px "DM Mono", monospace;
+            color: #1111;
+            transform: rotate(-12deg)
+        }
+
+        .cta-box h2 {
+            font-size: clamp(29px, 4vw, 43px);
+            line-height: 1.1;
+            letter-spacing: -.06em;
+            margin: 0 0 12px;
+            max-width: 560px;
+            position: relative;
+            z-index: 1
+        }
+
+        .cta-box p {
+            font-size: 13px;
+            margin: 0;
+            max-width: 500px;
+            position: relative;
+            z-index: 1
+        }
+
+        .cta-box .btn {
+            background: #171914;
+            color: white;
+            white-space: nowrap;
+            position: relative;
+            z-index: 1
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 60px
+        }
+
+        .faq-grid h2 {
+            font-size: 40px;
+            letter-spacing: -.06em;
+            line-height: 1.1;
+            margin: 12px 0
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--line)
+        }
+
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: 0;
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            padding: 20px 0;
+            font-weight: 800;
+            font-size: 14px;
+            cursor: pointer
+        }
+
+        .faq-q span:last-child {
+            font-size: 21px;
+            color: var(--lime)
+        }
+
+        .faq-a {
+            display: none;
+            color: var(--muted);
+            font-size: 12px;
+            padding: 0 25px 20px 0
+        }
+
+        .faq-item.open .faq-a {
+            display: block
+        }
+
+        .faq-item.open .faq-q span:last-child {
+            transform: rotate(45deg)
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 27px 0 35px;
+            color: var(--muted);
+            font-size: 11px
+        }
+
+        .footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px
+        }
+
+        .footer-links a:hover {
+            color: var(--lime)
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: #000a;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 50
+        }
+
+        .modal-backdrop.show {
+            display: flex
+        }
+
+        .modal {
+            background: #1a1c21;
+            border: 1px solid #42454d;
+            border-radius: 22px;
+            padding: 28px;
+            width: min(480px, 100%);
+            position: relative;
+            box-shadow: 0 30px 90px #0009
+        }
+
+        .modal h2 {
+            font-size: 26px;
+            letter-spacing: -.05em;
+            margin: 0 0 8px
+        }
+
+        .modal p {
+            color: var(--muted);
+            font-size: 12px;
+            margin: 0 0 20px
+        }
+
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 15px;
+            background: none;
+            border: 0;
+            color: #bbb;
+            font-size: 24px;
+            cursor: pointer
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin: 12px 0
+        }
+
+        .field label {
+            font-size: 11px;
+            color: #c5c7ce;
+            font-weight: 800
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            background: #111216;
+            border: 1px solid #383b43;
+            border-radius: 10px;
+            padding: 12px;
+            color: white;
+            outline: none
+        }
+
+        .field input:focus,
+        .field select:focus {
+            border-color: var(--lime)
+        }
+
+        .form-note {
+            font-size: 10px;
+            color: #9296a1;
+            margin-top: 12px
+        }
+
+        .success {
+            display: none;
+            border: 1px solid #52683a;
+            background: #c9fa6810;
+            color: #d9ffab;
+            border-radius: 10px;
+            padding: 13px;
+            font-size: 12px;
+            margin-top: 12px
+        }
+
+        @media(max-width:850px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 42px
+            }
+
+            .hero {
+                padding-top: 62px
+            }
+
+            .hero-copy {
+                max-width: 700px
+            }
+
+            .hero-visual {
+                max-width: 650px
+            }
+
+            .float-card {
+                right: 4px
+            }
+
+            .curriculum-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 35px
+            }
+
+            .sticky-note {
+                position: static
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 28px
+            }
+
+            .section-head {
+                align-items: start;
+                flex-direction: column
+            }
+
+            .section-head p {
+                max-width: 560px
+            }
+        }
+
+        @media(max-width:600px) {
+            .wrap {
+                width: min(100% - 30px, 1160px)
+            }
+
+            .nav {
+                height: 66px
+            }
+
+            .navlinks {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                right: 0;
+                background: #17191e;
+                padding: 20px;
+                flex-direction: column;
+                align-items: stretch;
+                border-bottom: 1px solid var(--line);
+                gap: 17px
+            }
+
+            .navlinks.show {
+                display: flex
+            }
+
+            .navlinks .btn {
+                width: 100%
+            }
+
+            .menu {
+                display: block
+            }
+
+            .nav>.btn {
+                display: none
+            }
+
+            .hero {
+                padding: 48px 0
+            }
+
+            .hero h1 {
+                font-size: 44px
+            }
+
+            .hero p {
+                font-size: 14px
+            }
+
+            .editor-body {
+                padding: 15px 12px;
+                font-size: 10px
+            }
+
+            .code-line {
+                gap: 10px
+            }
+
+            .float-card {
+                bottom: 12px;
+                right: 0
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 22px
+            }
+
+            .stat:nth-child(3) {
+                padding-left: 0;
+                border: 0
+            }
+
+            .cards,
+            .project-grid {
+                grid-template-columns: 1fr
+            }
+
+            .card {
+                min-height: auto
+            }
+
+            .project-art {
+                height: 180px
+            }
+
+            section {
+                padding: 65px 0
+            }
+
+            .module {
+                grid-template-columns: 35px 1fr;
+                gap: 10px
+            }
+
+            .weeks {
+                grid-column: 2
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .cta-box {
+                padding: 30px 24px;
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .cta-box:after {
+                right: 4%;
+                top: 4px;
+                font-size: 100px
+            }
+
+            .faq-grid h2 {
+                font-size: 34px
+            }
+
+            .footer-row {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .footer-links {
+                flex-wrap: wrap
+            }
+
+            .microproof {
+                align-items: flex-start
+            }
+
+            .announcement {
+                font-size: 10px
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="announcement">PROCODE ONLINE COHORT · PRACTICAL LEARNING FOR YOUR FIRST TECH ROLE</div>
-<header class="nav wrap">
-<a class="brand" href="#home" aria-label="ProCode home"><span class="brandmark">P</span> ProCode<span style="color:var(--lime)">.</span></a>
-<nav class="navlinks" id="navlinks"><a href="#approach">Why ProCode</a><a href="#curriculum">Curriculum</a><a href="#projects">Projects</a><a href="#faq">FAQ</a><button class="btn btn-primary" onclick="openModal()">Get course details ↗</button></nav>
-<button class="btn btn-primary" onclick="openModal()">Join the next cohort ↗</button><button class="menu" aria-label="Toggle navigation" onclick="document.getElementById('navlinks').classList.toggle('show')">☰</button>
-</header>
-<main>
-<section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy">
-<div class="eyebrow"><span class="dot"></span> Online classes · Beginner-friendly</div>
-<h1>Don’t just learn code.<br><em>Build your career.</em></h1>
-<p>ProCode helps college students and freshers become confident full-stack developers through practical projects, mentor feedback, and focused placement preparation—all online, at a student-friendly price.</p>
-<div class="hero-actions"><button class="btn btn-primary" onclick="openModal()">Get course details <span>↗</span></button><a class="btn btn-ghost" href="#curriculum">Explore the curriculum ↓</a></div>
-<div class="microproof"><div class="avatars"><span>JS</span><span>⌘</span><span>PC</span></div><div><strong style="color:#f4f3ef">Learn online. Build real projects.</strong><br><span class="hero-note">Practical skills · Portfolio · Interview prep</span></div></div>
-</div><div class="hero-visual"><div class="editor"><div class="editor-top"><span class="traffic"></span><span class="traffic"></span><span class="traffic"></span><span class="file">your-first-fullstack-app.jsx</span><span style="margin-left:auto">● main</span></div><div class="editor-body">
-<div class="code-line"><span class="ln">01</span><span><span class="pink">const</span> <span class="blue">YourNextStep</span> = () =&gt; {</span></div>
-<div class="code-line"><span class="ln">02</span><span>  <span class="pink">const</span> skills = [</span></div>
-<div class="code-line"><span class="ln">03</span><span>    <span class="green">'React + Next.js'</span>,</span></div>
-<div class="code-line"><span class="ln">04</span><span>    <span class="green">'Node.js + MongoDB'</span>,</span></div>
-<div class="code-line"><span class="ln">05</span><span>    <span class="green">'Real-world projects'</span>,</span></div>
-<div class="code-line"><span class="ln">06</span><span>    <span class="green">'Interview confidence'</span></span></div>
-<div class="code-line"><span class="ln">07</span><span>  ];</span></div>
-<div class="code-line"><span class="ln">08</span><span>  <span class="pink">return</span> (</span></div>
-<div class="code-line"><span class="ln">09</span><span>    &lt;<span class="orange">FutureDeveloper</span></span></div>
-<div class="code-line"><span class="ln">10</span><span>      skills={skills}</span></div>
-<div class="code-line"><span class="ln">11</span><span>      learning=<span class="green">"by building"</span></span></div>
-<div class="code-line"><span class="ln">12</span><span>    /&gt;</span></div>
-<div class="code-line"><span class="ln">13</span><span>  );</span></div><div class="code-line"><span class="ln">14</span><span>};</span></div></div><div class="code-bottom"><span>JavaScript&nbsp;&nbsp; UTF-8&nbsp;&nbsp; Spaces: 2</span><span class="status">✓ Ready to build</span></div></div><div class="float-card"><strong><span class="check">✓</span> Portfolio in progress</strong><small>Learn it. Build it. Explain it.</small></div></div></div></section>
-<div class="stats"><div class="wrap stats-grid"><div class="stat"><strong>Online-first</strong><span>Learn from wherever you are</span></div><div class="stat"><strong>Project-led</strong><span>Build, not just watch</span></div><div class="stat"><strong>Placement prep</strong><span>Practise the interview process</span></div><div class="stat"><strong>Student-friendly</strong><span>Practical, affordable learning</span></div></div></div>
-<section id="approach"><div class="wrap"><div class="section-head"><div><div class="kicker">Why ProCode</div><h2>Learn skills employers can see.</h2></div><p>A certificate is not the finish line. Build evidence of what you can do—and learn how to explain your work to a hiring team.</p></div><div class="cards">
-<article class="card"><div class="iconbox">⌘</div><h3>Learn by building</h3><p>Turn concepts into working features, APIs, and complete apps instead of only following video tutorials.</p></article>
-<article class="card"><div class="iconbox">↗</div><h3>Projects for your portfolio</h3><p>Build practical projects you can deploy, document, discuss, and keep improving after the course.</p></article>
-<article class="card"><div class="iconbox">⌕</div><h3>Placement preparation</h3><p>Practise JavaScript questions, coding problems, project walkthroughs, and mock interviews.</p></article>
-<article class="card"><div class="iconbox">◈</div><h3>Mentor feedback</h3><p>Learn to debug, read code, take feedback, and improve your solutions through structured reviews.</p></article>
-<article class="card"><div class="iconbox">◎</div><h3>Developer workflow</h3><p>Use Git and GitHub, work with branches, write useful README files, and understand how apps are deployed.</p></article>
-<article class="card"><div class="iconbox">₹</div><h3>Affordable by design</h3><p>Focused training for students and freshers, with clear course details before you commit. No job guarantees or inflated claims.</p></article>
-</div></div></section>
-<section class="curriculum" id="curriculum"><div class="wrap curriculum-grid"><div class="sticky-note"><div class="kicker">The learning path</div><h2>From coding basics to full-stack projects.</h2><p>Build your foundation, learn a modern JavaScript stack, and practise the skills that help you work on real applications.</p><div class="pillrow"><span class="pill">HTML / CSS</span><span class="pill">JavaScript</span><span class="pill">React</span><span class="pill">Node.js</span><span class="pill">MongoDB</span><span class="pill">Git</span></div><button class="btn btn-primary" onclick="openModal()">Request full syllabus ↗</button></div><div class="modules">
-<div class="module"><div class="module-num">01</div><div><h3>Web development foundations</h3><p>HTML, CSS, responsive design, JavaScript fundamentals, async code, and browser tools.</p></div><div class="weeks">FOUNDATION</div></div>
-<div class="module"><div class="module-num">02</div><div><h3>Frontend with React</h3><p>Components, props, state, forms, routing, reusable UI, accessibility, and API integration.</p></div><div class="weeks">FRONTEND</div></div>
-<div class="module"><div class="module-num">03</div><div><h3>Backend development</h3><p>Node.js, Express, REST APIs, authentication, validation, error handling, and security basics.</p></div><div class="weeks">BACKEND</div></div>
-<div class="module"><div class="module-num">04</div><div><h3>Databases & deployment</h3><p>MongoDB, data modelling, environment variables, Git workflows, testing, and deployment.</p></div><div class="weeks">PRODUCTION</div></div>
-<div class="module"><div class="module-num">05</div><div><h3>Portfolio capstone project</h3><p>Build an end-to-end app, document the architecture, fix bugs, and publish a live demo.</p></div><div class="weeks">BUILD</div></div>
-<div class="module"><div class="module-num">06</div><div><h3>Placement preparation studio</h3><p>Resume and GitHub review, coding practice, mock interviews, and project storytelling.</p></div><div class="weeks">CAREER</div></div>
-</div></div></section>
-<section id="projects"><div class="wrap"><div class="section-head"><div><div class="kicker">Your work speaks</div><h2>Build projects you can explain with confidence.</h2></div><p>Practice real product patterns, learn to make trade-offs, and create portfolio work that demonstrates your skills.</p></div><div class="project-grid">
-<article class="project"><div class="project-art"><div class="window"><div class="window-head"><i></i><i></i><i></i></div><div class="mockgrid"><div class="mocktile"><b></b><span></span><span></span></div><div class="mocktile"><b style="background:#a69bff"></b><span></span><span></span></div><div class="mocktile"><b style="background:#ffcb8b"></b><span></span><span></span></div></div><div class="chartline"></div></div></div><div class="project-content"><span class="tag">FULL-STACK PRODUCT</span><h3>Student productivity dashboard</h3><p>Create an app with secure accounts, task tracking, progress charts, search, and a documented API.</p><div class="tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>REST API</span></div></div></article>
-<article class="project"><div class="project-art purpleart"><div class="window"><div class="window-head"><i></i><i></i><i></i></div><div style="display:flex;gap:12px;margin-top:15px"><div style="width:30%;height:100px;border-radius:8px;background:#3c365c"></div><div style="flex:1"><div style="height:8px;width:70%;background:#c5baff;border-radius:4px;margin:6px 0 12px"></div><div style="height:5px;width:90%;background:#4e4a62;border-radius:4px;margin:8px 0"></div><div style="height:5px;width:75%;background:#4e4a62;border-radius:4px;margin:8px 0"></div><div style="height:24px;width:48%;background:var(--lime);border-radius:5px;margin-top:15px"></div></div></div></div></div><div class="project-content"><span class="tag">COMMUNITY APP</span><h3>Learning resource platform</h3><p>Build resource discovery, user profiles, saved learning progress, responsive pages, and thoughtful empty states.</p><div class="tech"><span>Next.js</span><span>Authentication</span><span>Database</span><span>Deployment</span></div></div></article>
-</div></div></section>
-<section><div class="wrap"><div class="section-head"><div><div class="kicker">Your weekly rhythm</div><h2>Learn it. Build it. Explain it.</h2></div><p>A repeatable process to help you learn independently and turn knowledge into practical skills.</p></div><div class="process"><div class="step"><div class="num">STEP 01</div><h3>Learn online</h3><p>Understand a concept through guided lessons and practical examples.</p></div><div class="step"><div class="num">STEP 02</div><h3>Code it yourself</h3><p>Complete hands-on tasks and build features from real-world briefs.</p></div><div class="step"><div class="num">STEP 03</div><h3>Review & improve</h3><p>Debug issues, use feedback, and learn to write maintainable code.</p></div><div class="step"><div class="num">STEP 04</div><h3>Prepare to interview</h3><p>Practise explaining decisions, solving problems, and presenting projects.</p></div></div></div></section>
-<div class="cta"><div class="wrap"><div class="cta-box"><div><h2>Your first tech role starts with skills you can prove.</h2><p>Get the ProCode syllabus, upcoming online batch information, and affordable course details.</p></div><button class="btn" onclick="openModal()">Get started with ProCode ↗</button></div></div></div>
-<section id="faq"><div class="wrap faq-grid"><div><div class="kicker">Frequently asked</div><h2>Questions before you start.</h2><p style="font-size:13px;color:var(--muted)">Explore the basics, then ask us for current batch details.</p></div><div>
-<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Is ProCode suitable for college students and freshers?</span><span>＋</span></button><div class="faq-a">Yes. The course is designed around building a foundation, completing practical projects, and preparing to demonstrate your skills in entry-level interviews. Consistent practice outside class is important.</div></div>
-<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Are the classes online?</span><span>＋</span></button><div class="faq-a">Yes, ProCode is positioned as an online learning program. Confirm the exact live-session schedule, recordings, mentor support, and attendance expectations with the team before enrolling.</div></div>
-<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Will I get a guaranteed job or placement?</span><span>＋</span></button><div class="faq-a">No course can honestly guarantee a job. ProCode focuses on practical skills and placement preparation to help you become a stronger candidate. Hiring outcomes depend on your effort, interview performance, and market conditions.</div></div>
-<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>How much does the course cost?</span><span>＋</span></button><div class="faq-a">ProCode is positioned as affordable for students and freshers. The actual fee, instalment options, duration, and any discounts should be confirmed with the team before you make a payment.</div></div>
-<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Do I need a powerful laptop?</span><span>＋</span></button><div class="faq-a">A reliable laptop or desktop that can run a modern browser, a code editor, and basic development tools is recommended. Share your device specifications with the team if you are unsure.</div></div>
-</div></div></section>
-</main>
-<footer><div class="wrap footer-row"><a class="brand" href="#home"><span class="brandmark">P</span> ProCode<span style="color:var(--lime)">.</span></a><span>Practical learning. Real projects. Career preparation.</span><div class="footer-links"><a href="#approach">Why ProCode</a><a href="#curriculum">Curriculum</a><a href="#faq">FAQ</a><a href="#" onclick="openModal();return false">Contact</a></div></div><div class="wrap" style="margin-top:20px;color:#6f727c">© <span id="year"></span> ProCode. Add your real contact details, policies, and course terms before publishing.</div></footer>
-<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeModal()"><div class="modal"><button class="close" aria-label="Close" onclick="closeModal()">×</button><h2 id="modalTitle">Get ProCode course details.</h2><p>Tell us a little about yourself to request the syllabus and next online cohort information.</p><form id="interestForm"><div class="field"><label for="name">YOUR NAME</label><input id="name" name="name" placeholder="e.g. Aditi Sharma" required></div><div class="field"><label for="email">EMAIL ADDRESS</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div><div class="field"><label for="level">YOUR CURRENT LEVEL</label><select id="level" name="level" required><option value="">Choose one</option><option>Complete beginner</option><option>Know the basics</option><option>Built a few projects</option><option>Preparing for interviews</option></select></div><div class="field"><label for="goal">WHAT WOULD YOU LIKE HELP WITH?</label><select id="goal" name="goal" required><option value="">Choose one</option><option>Learn Full Stack Development</option><option>Build portfolio projects</option><option>Prepare for placements</option><option>Switch to a developer career</option></select></div><button class="btn btn-primary" type="submit" style="width:100%;margin-top:8px">Request course details ↗</button><div class="form-note">Demo form: submissions are not sent to a server. Connect it to your email, CRM, or backend before launch.</div><div class="success" id="successMsg" role="status">Thanks for your interest in ProCode! This demo form validated your details. Connect a backend to receive real enquiries.</div></form></div></div>
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
-function openModal(){document.getElementById('modalBackdrop').classList.add('show');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('name').focus(),50)}
-function closeModal(){document.getElementById('modalBackdrop').classList.remove('show');document.body.style.overflow=''}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const item=q.parentElement;const open=item.classList.toggle('open');q.setAttribute('aria-expanded',String(open))}));
-document.getElementById('interestForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('successMsg').style.display='block'});
-document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('show')));
-</script>
+    <div class="announcement">PROCODE ONLINE COHORT · PRACTICAL LEARNING FOR YOUR FIRST TECH ROLE</div>
+    <header class="nav wrap">
+        <a class="brand" href="#home" aria-label="ProCode home"><span class="brandmark">P</span> ProCode<span
+                style="color:var(--lime)">.</span></a>
+        <nav class="navlinks" id="navlinks"><a href="#approach">Why ProCode</a><a href="#curriculum">Curriculum</a><a
+                href="#projects">Projects</a><a href="#faq">FAQ</a></nav>
+        <a class="btn btn-primary" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
+            rel="noopener noreferrer">Join the next cohort ↗</a><button class="menu" aria-label="Toggle navigation"
+            onclick="document.getElementById('navlinks').classList.toggle('show')">☰</button>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="dot"></span> Online classes · Beginner-friendly</div>
+                    <h1>Don’t just learn code.<br><em>Build your career.</em></h1>
+                    <p>ProCode helps college students and freshers become confident full-stack developers through
+                        practical projects, mentor feedback, and focused placement preparation—all online, at a
+                        student-friendly price.</p>
+                    <div class="hero-actions"><a class="btn btn-ghost" href="#curriculum">Explore the curriculum
+                            ↓</a></div>
+                    <div class="microproof">
+                        <div class="avatars"><span>JS</span><span>⌘</span><span>PC</span></div>
+                        <div><strong style="color:#f4f3ef">Learn online. Build real projects.</strong><br><span
+                                class="hero-note">Practical skills · Portfolio · Interview prep</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="editor">
+                        <div class="editor-top"><span class="traffic"></span><span class="traffic"></span><span
+                                class="traffic"></span><span class="file">your-first-fullstack-app.jsx</span><span
+                                style="margin-left:auto">● main</span></div>
+                        <div class="editor-body">
+                            <div class="code-line"><span class="ln">01</span><span><span class="pink">const</span> <span
+                                        class="blue">YourNextStep</span> = () =&gt; {</span></div>
+                            <div class="code-line"><span class="ln">02</span><span> <span class="pink">const</span>
+                                    skills = [</span></div>
+                            <div class="code-line"><span class="ln">03</span><span> <span class="green">'React +
+                                        Next.js'</span>,</span></div>
+                            <div class="code-line"><span class="ln">04</span><span> <span class="green">'Node.js +
+                                        MongoDB'</span>,</span></div>
+                            <div class="code-line"><span class="ln">05</span><span> <span class="green">'Real-world
+                                        projects'</span>,</span></div>
+                            <div class="code-line"><span class="ln">06</span><span> <span class="green">'Interview
+                                        confidence'</span></span></div>
+                            <div class="code-line"><span class="ln">07</span><span> ];</span></div>
+                            <div class="code-line"><span class="ln">08</span><span> <span class="pink">return</span>
+                                    (</span></div>
+                            <div class="code-line"><span class="ln">09</span><span> &lt;<span
+                                        class="orange">FutureDeveloper</span></span></div>
+                            <div class="code-line"><span class="ln">10</span><span> skills={skills}</span></div>
+                            <div class="code-line"><span class="ln">11</span><span> learning=<span class="green">"by
+                                        building"</span></span></div>
+                            <div class="code-line"><span class="ln">12</span><span> /&gt;</span></div>
+                            <div class="code-line"><span class="ln">13</span><span> );</span></div>
+                            <div class="code-line"><span class="ln">14</span><span>};</span></div>
+                        </div>
+                        <div class="code-bottom"><span>JavaScript&nbsp;&nbsp; UTF-8&nbsp;&nbsp; Spaces: 2</span><span
+                                class="status">✓ Ready to build</span></div>
+                    </div>
+                    <div class="float-card"><strong><span class="check">✓</span> Portfolio in
+                            progress</strong><small>Learn it. Build it. Explain it.</small></div>
+                </div>
+            </div>
+        </section>
+        <div class="stats">
+            <div class="wrap stats-grid">
+                <div class="stat"><strong>Online-first</strong><span>Learn from wherever you are</span></div>
+                <div class="stat"><strong>Project-led</strong><span>Build, not just watch</span></div>
+                <div class="stat"><strong>Placement prep</strong><span>Practise the interview process</span></div>
+                <div class="stat"><strong>Student-friendly</strong><span>Practical, affordable learning</span></div>
+            </div>
+        </div>
+        <section id="approach">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="kicker">Why ProCode</div>
+                        <h2>Learn skills employers can see.</h2>
+                    </div>
+                    <p>A certificate is not the finish line. Build evidence of what you can do—and learn how to explain
+                        your work to a hiring team.</p>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <div class="iconbox">⌘</div>
+                        <h3>Learn by building</h3>
+                        <p>Turn concepts into working features, APIs, and complete apps instead of only following video
+                            tutorials.</p>
+                    </article>
+                    <article class="card">
+                        <div class="iconbox">↗</div>
+                        <h3>Projects for your portfolio</h3>
+                        <p>Build practical projects you can deploy, document, discuss, and keep improving after the
+                            course.</p>
+                    </article>
+                    <article class="card">
+                        <div class="iconbox">⌕</div>
+                        <h3>Placement preparation</h3>
+                        <p>Practise JavaScript questions, coding problems, project walkthroughs, and mock interviews.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <div class="iconbox">◈</div>
+                        <h3>Mentor feedback</h3>
+                        <p>Learn to debug, read code, take feedback, and improve your solutions through structured
+                            reviews.</p>
+                    </article>
+                    <article class="card">
+                        <div class="iconbox">◎</div>
+                        <h3>Developer workflow</h3>
+                        <p>Use Git and GitHub, work with branches, write useful README files, and understand how apps
+                            are deployed.</p>
+                    </article>
+                    <article class="card">
+                        <div class="iconbox">₹</div>
+                        <h3>Affordable by design</h3>
+                        <p>Focused training for students and freshers, with clear course details before you commit. No
+                            job guarantees or inflated claims.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="curriculum" id="curriculum">
+            <div class="wrap curriculum-grid">
+                <div class="sticky-note">
+                    <div class="kicker">The learning path</div>
+                    <h2>From coding basics to full-stack projects.</h2>
+                    <p>Build your foundation, learn a modern JavaScript stack, and practise the skills that help you
+                        work on real applications.</p>
+                    <div class="pillrow"><span class="pill">HTML / CSS</span><span class="pill">JavaScript</span><span
+                            class="pill">React</span><span class="pill">Node.js</span><span
+                            class="pill">MongoDB</span><span class="pill">Git</span></div><a class="btn btn-primary"
+                        href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank" rel="noopener noreferrer">Request
+                        full syllabus ↗</a>
+                </div>
+                <div class="modules">
+                    <div class="module">
+                        <div class="module-num">01</div>
+                        <div>
+                            <h3>Web development foundations</h3>
+                            <p>HTML, CSS, responsive design, JavaScript fundamentals, async code, and browser tools.</p>
+                        </div>
+                        <div class="weeks">FOUNDATION</div>
+                    </div>
+                    <div class="module">
+                        <div class="module-num">02</div>
+                        <div>
+                            <h3>Frontend with React</h3>
+                            <p>Components, props, state, forms, routing, reusable UI, accessibility, and API
+                                integration.</p>
+                        </div>
+                        <div class="weeks">FRONTEND</div>
+                    </div>
+                    <div class="module">
+                        <div class="module-num">03</div>
+                        <div>
+                            <h3>Backend development</h3>
+                            <p>Node.js, Express, REST APIs, authentication, validation, error handling, and security
+                                basics.</p>
+                        </div>
+                        <div class="weeks">BACKEND</div>
+                    </div>
+                    <div class="module">
+                        <div class="module-num">04</div>
+                        <div>
+                            <h3>Databases & deployment</h3>
+                            <p>MongoDB, data modelling, environment variables, Git workflows, testing, and deployment.
+                            </p>
+                        </div>
+                        <div class="weeks">PRODUCTION</div>
+                    </div>
+                    <div class="module">
+                        <div class="module-num">05</div>
+                        <div>
+                            <h3>Portfolio capstone project</h3>
+                            <p>Build an end-to-end app, document the architecture, fix bugs, and publish a live demo.
+                            </p>
+                        </div>
+                        <div class="weeks">BUILD</div>
+                    </div>
+                    <div class="module">
+                        <div class="module-num">06</div>
+                        <div>
+                            <h3>Placement preparation studio</h3>
+                            <p>Resume and GitHub review, coding practice, mock interviews, and project storytelling.</p>
+                        </div>
+                        <div class="weeks">CAREER</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="kicker">Your work speaks</div>
+                        <h2>Build projects you can explain with confidence.</h2>
+                    </div>
+                    <p>Practice real product patterns, learn to make trade-offs, and create portfolio work that
+                        demonstrates your skills.</p>
+                </div>
+                <div class="project-grid">
+                    <article class="project">
+                        <div class="project-art">
+                            <div class="window">
+                                <div class="window-head"><i></i><i></i><i></i></div>
+                                <div class="mockgrid">
+                                    <div class="mocktile"><b></b><span></span><span></span></div>
+                                    <div class="mocktile"><b style="background:#a69bff"></b><span></span><span></span>
+                                    </div>
+                                    <div class="mocktile"><b style="background:#ffcb8b"></b><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="chartline"></div>
+                            </div>
+                        </div>
+                        <div class="project-content"><span class="tag">FULL-STACK PRODUCT</span>
+                            <h3>Student productivity dashboard</h3>
+                            <p>Create an app with secure accounts, task tracking, progress charts, search, and a
+                                documented API.</p>
+                            <div class="tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>REST
+                                    API</span></div>
+                        </div>
+                    </article>
+                    <article class="project">
+                        <div class="project-art purpleart">
+                            <div class="window">
+                                <div class="window-head"><i></i><i></i><i></i></div>
+                                <div style="display:flex;gap:12px;margin-top:15px">
+                                    <div style="width:30%;height:100px;border-radius:8px;background:#3c365c"></div>
+                                    <div style="flex:1">
+                                        <div
+                                            style="height:8px;width:70%;background:#c5baff;border-radius:4px;margin:6px 0 12px">
+                                        </div>
+                                        <div
+                                            style="height:5px;width:90%;background:#4e4a62;border-radius:4px;margin:8px 0">
+                                        </div>
+                                        <div
+                                            style="height:5px;width:75%;background:#4e4a62;border-radius:4px;margin:8px 0">
+                                        </div>
+                                        <div
+                                            style="height:24px;width:48%;background:var(--lime);border-radius:5px;margin-top:15px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content"><span class="tag">COMMUNITY APP</span>
+                            <h3>Learning resource platform</h3>
+                            <p>Build resource discovery, user profiles, saved learning progress, responsive pages, and
+                                thoughtful empty states.</p>
+                            <div class="tech">
+                                <span>Next.js</span><span>Authentication</span><span>Database</span><span>Deployment</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="kicker">Your weekly rhythm</div>
+                        <h2>Learn it. Build it. Explain it.</h2>
+                    </div>
+                    <p>A repeatable process to help you learn independently and turn knowledge into practical skills.
+                    </p>
+                </div>
+                <div class="process">
+                    <div class="step">
+                        <div class="num">STEP 01</div>
+                        <h3>Learn online</h3>
+                        <p>Understand a concept through guided lessons and practical examples.</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">STEP 02</div>
+                        <h3>Code it yourself</h3>
+                        <p>Complete hands-on tasks and build features from real-world briefs.</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">STEP 03</div>
+                        <h3>Review & improve</h3>
+                        <p>Debug issues, use feedback, and learn to write maintainable code.</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">STEP 04</div>
+                        <h3>Prepare to interview</h3>
+                        <p>Practise explaining decisions, solving problems, and presenting projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="cta">
+            <div class="wrap">
+                <div class="cta-box">
+                    <div>
+                        <h2>Your first tech role starts with skills you can prove.</h2>
+                        <p>Get the ProCode syllabus, upcoming online batch information, and affordable course details.
+                        </p>
+                    </div><button class="btn" onclick="openModal()">Get started with ProCode ↗</button>
+                </div>
+            </div>
+        </div>
+        <section id="faq">
+            <div class="wrap faq-grid">
+                <div>
+                    <div class="kicker">Frequently asked</div>
+                    <h2>Questions before you start.</h2>
+                    <p style="font-size:13px;color:var(--muted)">Explore the basics, then ask us for current batch
+                        details.</p>
+                </div>
+                <div>
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Is ProCode suitable for
+                                college students and freshers?</span><span>＋</span></button>
+                        <div class="faq-a">Yes. The course is designed around building a foundation, completing
+                            practical projects, and preparing to demonstrate your skills in entry-level interviews.
+                            Consistent practice outside class is important.</div>
+                    </div>
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Are the classes
+                                online?</span><span>＋</span></button>
+                        <div class="faq-a">Yes, ProCode is positioned as an online learning program. Confirm the exact
+                            live-session schedule, recordings, mentor support, and attendance expectations with the team
+                            before enrolling.</div>
+                    </div>
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Will I get a guaranteed job
+                                or placement?</span><span>＋</span></button>
+                        <div class="faq-a">No course can honestly guarantee a job. ProCode focuses on practical skills
+                            and placement preparation to help you become a stronger candidate. Hiring outcomes depend on
+                            your effort, interview performance, and market conditions.</div>
+                    </div>
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>How much does the course
+                                cost?</span><span>＋</span></button>
+                        <div class="faq-a">ProCode is positioned as affordable for students and freshers. The actual
+                            fee, instalment options, duration, and any discounts should be confirmed with the team
+                            before you make a payment.</div>
+                    </div>
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Do I need a powerful
+                                laptop?</span><span>＋</span></button>
+                        <div class="faq-a">A reliable laptop or desktop that can run a modern browser, a code editor,
+                            and basic development tools is recommended. Share your device specifications with the team
+                            if you are unsure.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap footer-row"><a class="brand" href="#home"><span class="brandmark">P</span> ProCode<span
+                    style="color:var(--lime)">.</span></a><span>Practical learning. Real projects. Career
+                preparation.</span>
+            <div class="footer-links"><a href="#approach">Why ProCode</a><a href="#curriculum">Curriculum</a><a
+                    href="#faq">FAQ</a><a href="#" onclick="openModal();return false">Contact</a></div>
+        </div>
+        <div class="wrap" style="margin-top:20px;color:#6f727c">© <span id="year"></span> ProCode. Built by Atharva
+            Wadhai and Pratik More.</div>
+    </footer>
+    <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        onclick="if(event.target===this)closeModal()">
+        <div class="modal"><button class="close" aria-label="Close" onclick="closeModal()">×</button>
+            <h2 id="modalTitle">Get ProCode course details.</h2>
+            <p>Tell us a little about yourself to request the syllabus and next online cohort information.</p>
+            <form id="interestForm">
+                <div class="field"><label for="name">YOUR NAME</label><input id="name" name="name"
+                        placeholder="e.g. Aditi Sharma" required></div>
+                <div class="field"><label for="email">EMAIL ADDRESS</label><input id="email" name="email" type="email"
+                        placeholder="you@example.com" required></div>
+                <div class="field"><label for="level">YOUR CURRENT LEVEL</label><select id="level" name="level"
+                        required>
+                        <option value="">Choose one</option>
+                        <option>Complete beginner</option>
+                        <option>Know the basics</option>
+                        <option>Built a few projects</option>
+                        <option>Preparing for interviews</option>
+                    </select></div>
+                <div class="field"><label for="goal">WHAT WOULD YOU LIKE HELP WITH?</label><select id="goal" name="goal"
+                        required>
+                        <option value="">Choose one</option>
+                        <option>Learn Full Stack Development</option>
+                        <option>Build portfolio projects</option>
+                        <option>Prepare for placements</option>
+                        <option>Switch to a developer career</option>
+                    </select></div><button class="btn btn-primary" type="submit"
+                    style="width:100%;margin-top:8px">Request course details ↗</button>
+                <div class="form-note">Demo form: submissions are not sent to a server. Connect it to your email, CRM,
+                    or backend before launch.</div>
+                <div class="success" id="successMsg" role="status">Thanks for your interest in ProCode! This demo form
+                    validated your details. Connect a backend to receive real enquiries.</div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        function openModal() { document.getElementById('modalBackdrop').classList.add('show'); document.body.style.overflow = 'hidden'; setTimeout(() => document.getElementById('name').focus(), 50) }
+        function closeModal() { document.getElementById('modalBackdrop').classList.remove('show'); document.body.style.overflow = '' }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal() });
+        document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => { const item = q.parentElement; const open = item.classList.toggle('open'); q.setAttribute('aria-expanded', String(open)) }));
+        document.getElementById('interestForm').addEventListener('submit', e => { e.preventDefault(); document.getElementById('successMsg').style.display = 'block' });
+        document.querySelectorAll('#navlinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navlinks').classList.remove('show')));
+    </script>
 </body>
+
 </html>
