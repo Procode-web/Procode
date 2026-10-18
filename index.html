@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#101114">
-    <title>ProCode — Full Stack Development, Built for Your First Job</title>
+    <title>ProCode — Full Stack, UI/UX & Graphic Design Programs</title>
     <meta name="description"
-        content="Affordable online Full Stack Development training for college students and freshers. Build real projects, prepare for interviews, and grow job-ready skills.">
+        content="Affordable online Full Stack Web Development, UI/UX Product Design, and Graphic Design cohorts for college students and freshers. Build real projects and prepare for your first role.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -1135,6 +1135,203 @@
                 font-size: 10px
             }
         }
+
+        /* Course Selector & Program Cards */
+        .courses-section {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: linear-gradient(180deg, #131519 0%, #101114 100%);
+            position: relative;
+        }
+
+        .course-tabs {
+            display: flex;
+            gap: 10px;
+            background: #17191e;
+            padding: 6px;
+            border-radius: 999px;
+            border: 1px solid #2b2e35;
+            width: fit-content;
+            margin: 0 auto 36px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover {
+            color: var(--text);
+        }
+
+        .tab-btn.active {
+            background: var(--lime);
+            color: #12140f;
+            box-shadow: 0 4px 18px rgba(201, 250, 104, 0.25);
+        }
+
+        .course-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .prog-card {
+            background: var(--panel);
+            border: 1px solid #2b2e35;
+            border-radius: var(--radius);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+        }
+
+        .prog-card:hover {
+            transform: translateY(-5px);
+            border-color: #434752;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+        }
+
+        .prog-card.featured {
+            border-color: #a69bff55;
+            background: linear-gradient(180deg, #191a22 0%, #17191e 100%);
+        }
+
+        .prog-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font: 10px "DM Mono", monospace;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 6px;
+            letter-spacing: .08em;
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .badge-dev {
+            background: #c9fa6818;
+            color: var(--lime);
+            border: 1px solid #c9fa6833;
+        }
+
+        .badge-uiux {
+            background: #a69bff18;
+            color: var(--purple);
+            border: 1px solid #a69bff33;
+        }
+
+        .badge-graphic {
+            background: #ffaa5a18;
+            color: #ffaa5a;
+            border: 1px solid #ffaa5a33;
+        }
+
+        .prog-card h3 {
+            font-size: 21px;
+            letter-spacing: -.04em;
+            margin: 0 0 10px;
+        }
+
+        .prog-card p.prog-desc {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0 0 22px;
+            min-height: 58px;
+        }
+
+        .prog-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid #282b32;
+            padding-top: 18px;
+        }
+
+        .prog-features li {
+            font-size: 12px;
+            color: #d1d3dc;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .prog-features li span.icon {
+            color: var(--lime);
+            font-weight: 800;
+        }
+
+        .prog-tools {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .prog-tools span {
+            font: 10px "DM Mono", monospace;
+            background: #111215;
+            border: 1px solid #30333b;
+            padding: 5px 8px;
+            border-radius: 6px;
+            color: #b5b8c2;
+        }
+
+        .prog-action {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .curriculum-content-block {
+            display: none;
+        }
+
+        .curriculum-content-block.active {
+            display: block;
+            animation: fadeIn .3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width:960px) {
+            .course-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-tabs {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                border-radius: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -1143,8 +1340,8 @@
     <header class="nav wrap">
         <a class="brand" href="#home" aria-label="ProCode home"><span class="brandmark">P</span> ProCode<span
                 style="color:var(--lime)">.</span></a>
-        <nav class="navlinks" id="navlinks"><a href="#approach">Why ProCode</a><a href="#curriculum">Curriculum</a><a
-                href="#projects">Projects</a><a href="#faq">FAQ</a></nav>
+        <nav class="navlinks" id="navlinks"><a href="#courses">Courses</a><a href="#approach">Why ProCode</a><a
+                href="#curriculum">Curriculum</a><a href="#projects">Projects</a><a href="#faq">FAQ</a></nav>
         <a class="btn btn-primary" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
             rel="noopener noreferrer">Join the next cohort ↗</a><button class="menu" aria-label="Toggle navigation"
             onclick="document.getElementById('navlinks').classList.toggle('show')">☰</button>
@@ -1153,65 +1350,167 @@
         <section class="hero" id="home">
             <div class="wrap hero-grid">
                 <div class="hero-copy">
-                    <div class="eyebrow"><span class="dot"></span> Online classes · Beginner-friendly</div>
-                    <h1>Don’t just learn code.<br><em>Build your career.</em></h1>
-                    <p>ProCode helps college students and freshers become confident full-stack developers through
-                        practical projects, mentor feedback, and focused placement preparation—all online, at a
-                        student-friendly price.</p>
-                    <div class="hero-actions"><a class="btn btn-ghost" href="#curriculum">Explore the curriculum
-                            ↓</a></div>
+                    <div class="eyebrow"><span class="dot"></span> Online cohorts · Full Stack, UI/UX & Graphic Design
+                    </div>
+                    <h1>Don’t just learn skills.<br><em>Build your career.</em></h1>
+                    <p>ProCode helps college students and freshers master in-demand tech and creative domains: Full
+                        Stack Web Development, UI/UX Product Design, and Graphic Design—with real projects, industry
+                        mentors, and portfolio reviews.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#courses">Explore Courses ↓</a>
+                        <a class="btn btn-ghost" href="#curriculum">View Syllabi</a>
+                    </div>
                     <div class="microproof">
-                        <div class="avatars"><span>JS</span><span>⌘</span><span>PC</span></div>
-                        <div><strong style="color:#f4f3ef">Learn online. Build real projects.</strong><br><span
-                                class="hero-note">Practical skills · Portfolio · Interview prep</span></div>
+                        <div class="avatars"><span>DEV</span><span>UX</span><span>GD</span></div>
+                        <div><strong style="color:#f4f3ef">Learn online. Build real client-grade work.</strong><br><span
+                                class="hero-note">Full Stack · UI/UX Design · Graphic & Brand Design</span></div>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <div class="editor">
                         <div class="editor-top"><span class="traffic"></span><span class="traffic"></span><span
-                                class="traffic"></span><span class="file">your-first-fullstack-app.jsx</span><span
+                                class="traffic"></span><span class="file">career-tracks.config.js</span><span
                                 style="margin-left:auto">● main</span></div>
                         <div class="editor-body">
                             <div class="code-line"><span class="ln">01</span><span><span class="pink">const</span> <span
-                                        class="blue">YourNextStep</span> = () =&gt; {</span></div>
-                            <div class="code-line"><span class="ln">02</span><span> <span class="pink">const</span>
-                                    skills = [</span></div>
-                            <div class="code-line"><span class="ln">03</span><span> <span class="green">'React +
-                                        Next.js'</span>,</span></div>
-                            <div class="code-line"><span class="ln">04</span><span> <span class="green">'Node.js +
-                                        MongoDB'</span>,</span></div>
-                            <div class="code-line"><span class="ln">05</span><span> <span class="green">'Real-world
-                                        projects'</span>,</span></div>
-                            <div class="code-line"><span class="ln">06</span><span> <span class="green">'Interview
-                                        confidence'</span></span></div>
-                            <div class="code-line"><span class="ln">07</span><span> ];</span></div>
-                            <div class="code-line"><span class="ln">08</span><span> <span class="pink">return</span>
-                                    (</span></div>
-                            <div class="code-line"><span class="ln">09</span><span> &lt;<span
-                                        class="orange">FutureDeveloper</span></span></div>
-                            <div class="code-line"><span class="ln">10</span><span> skills={skills}</span></div>
-                            <div class="code-line"><span class="ln">11</span><span> learning=<span class="green">"by
-                                        building"</span></span></div>
-                            <div class="code-line"><span class="ln">12</span><span> /&gt;</span></div>
-                            <div class="code-line"><span class="ln">13</span><span> );</span></div>
-                            <div class="code-line"><span class="ln">14</span><span>};</span></div>
+                                        class="blue">ProCodePrograms</span> = [</span></div>
+                            <div class="code-line"><span class="ln">02</span><span> {</span></div>
+                            <div class="code-line"><span class="ln">03</span><span> track: <span class="green">'Full
+                                        Stack Web Dev'</span>,</span></div>
+                            <div class="code-line"><span class="ln">04</span><span> focus: <span class="orange">'MERN,
+                                        Next.js, APIs & Deployment'</span></span></div>
+                            <div class="code-line"><span class="ln">05</span><span> },</span></div>
+                            <div class="code-line"><span class="ln">06</span><span> {</span></div>
+                            <div class="code-line"><span class="ln">07</span><span> track: <span class="green">'UI/UX
+                                        Product Design'</span>,</span></div>
+                            <div class="code-line"><span class="ln">08</span><span> focus: <span class="orange">'Figma,
+                                        Design Systems, User Research'</span></span></div>
+                            <div class="code-line"><span class="ln">09</span><span> },</span></div>
+                            <div class="code-line"><span class="ln">10</span><span> {</span></div>
+                            <div class="code-line"><span class="ln">11</span><span> track: <span class="green">'Graphic
+                                        & Brand Design'</span>,</span></div>
+                            <div class="code-line"><span class="ln">12</span><span> focus: <span
+                                        class="orange">'Photoshop, Illustrator, Visual Identity'</span></span></div>
+                            <div class="code-line"><span class="ln">13</span><span> }</span></div>
+                            <div class="code-line"><span class="ln">14</span><span>];</span></div>
                         </div>
-                        <div class="code-bottom"><span>JavaScript&nbsp;&nbsp; UTF-8&nbsp;&nbsp; Spaces: 2</span><span
-                                class="status">✓ Ready to build</span></div>
+                        <div class="code-bottom"><span>Ready to enroll&nbsp;&nbsp; 3 In-Demand Tracks</span><span
+                                class="status">✓ Cohorts Open</span></div>
                     </div>
-                    <div class="float-card"><strong><span class="check">✓</span> Portfolio in
-                            progress</strong><small>Learn it. Build it. Explain it.</small></div>
+                    <div class="float-card"><strong><span class="check">✓</span> 3 Career Tracks
+                            Available</strong><small>Development · UI/UX · Graphic Design</small></div>
                 </div>
             </div>
         </section>
         <div class="stats">
             <div class="wrap stats-grid">
-                <div class="stat"><strong>Online-first</strong><span>Learn from wherever you are</span></div>
-                <div class="stat"><strong>Project-led</strong><span>Build, not just watch</span></div>
-                <div class="stat"><strong>Placement prep</strong><span>Practise the interview process</span></div>
-                <div class="stat"><strong>Student-friendly</strong><span>Practical, affordable learning</span></div>
+                <div class="stat"><strong>3 Cohort Tracks</strong><span>Full Stack, UI/UX, Graphic Design</span></div>
+                <div class="stat"><strong>Project-Led</strong><span>Real client briefs & portfolio assets</span></div>
+                <div class="stat"><strong>Career & Placement Prep</strong><span>Mock reviews & interview practice</span>
+                </div>
+                <div class="stat"><strong>Student-Friendly</strong><span>Affordable pricing with live guidance</span>
+                </div>
             </div>
         </div>
+
+        <!-- NEW COURSES SHOWCASE SECTION -->
+        <section class="courses-section" id="courses">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="kicker">Specialized Programs</div>
+                        <h2>Choose your creative or engineering path.</h2>
+                    </div>
+                    <p>Designed for college students, graduates, and aspiring professionals. Gain real skills, produce
+                        portfolio deliverables, and prepare for top internships and entry-level positions.</p>
+                </div>
+
+                <div class="course-card-grid">
+                    <!-- Full Stack Course Card -->
+                    <article class="prog-card">
+                        <div>
+                            <span class="prog-badge badge-dev">⚡ Engineering Track</span>
+                            <h3>Full Stack Development</h3>
+                            <p class="prog-desc">Master modern frontend and scalable backend architecture. Build
+                                production-grade web apps with interactive React interfaces and robust REST APIs.</p>
+                            <ul class="prog-features">
+                                <li><span class="icon">✓</span> Frontend with React & Modern JavaScript</li>
+                                <li><span class="icon">✓</span> Node.js, Express & RESTful APIs</li>
+                                <li><span class="icon">✓</span> MongoDB, Databases & Cloud Deployment</li>
+                                <li><span class="icon">✓</span> Git, GitHub & Collaborative Dev Workflows</li>
+                                <li><span class="icon">✓</span> 2 Production Capstone Portfolio Projects</li>
+                            </ul>
+                            <div class="prog-tools">
+                                <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Next.js</span><span>Git</span>
+                            </div>
+                        </div>
+                        <div class="prog-action">
+                            <button class="btn btn-primary" onclick="switchTrack('dev')" style="flex:1">View Syllabus
+                                ↓</button>
+                            <a class="btn btn-ghost" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
+                                rel="noopener noreferrer">Enroll ↗</a>
+                        </div>
+                    </article>
+
+                    <!-- UI/UX Course Card -->
+                    <article class="prog-card featured">
+                        <div>
+                            <span class="prog-badge badge-uiux">✦ Product Design Track</span>
+                            <h3>UI/UX Design</h3>
+                            <p class="prog-desc">Learn how to create delightful, intuitive, and modern digital product
+                                experiences from user research and wireframing to high-fidelity Figma design systems.
+                            </p>
+                            <ul class="prog-features">
+                                <li><span class="icon">✓</span> User Research, Personas & User Journey Mapping</li>
+                                <li><span class="icon">✓</span> Wireframing, Information Architecture & UX Laws</li>
+                                <li><span class="icon">✓</span> Advanced Figma: Auto-layout, Variants & Tokens</li>
+                                <li><span class="icon">✓</span> Interactive Micro-interactions & Prototyping</li>
+                                <li><span class="icon">✓</span> Complete Mobile App & Web Product Case Studies</li>
+                            </ul>
+                            <div class="prog-tools">
+                                <span>Figma</span><span>FigJam</span><span>Wireframing</span><span>Design
+                                    Systems</span><span>Prototyping</span>
+                            </div>
+                        </div>
+                        <div class="prog-action">
+                            <button class="btn btn-primary" onclick="switchTrack('uiux')" style="flex:1">View Syllabus
+                                ↓</button>
+                            <a class="btn btn-ghost" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
+                                rel="noopener noreferrer">Enroll ↗</a>
+                        </div>
+                    </article>
+
+                    <!-- Graphic Design Course Card -->
+                    <article class="prog-card">
+                        <div>
+                            <span class="prog-badge badge-graphic">★ Visual Arts Track</span>
+                            <h3>Graphic Designing</h3>
+                            <p class="prog-desc">Create striking visual identities, advertising collateral, typography,
+                                social media assets, and commercial branding packages that stand out in the creative
+                                industry.</p>
+                            <ul class="prog-features">
+                                <li><span class="icon">✓</span> Visual Hierarchy, Color Theory & Typography</li>
+                                <li><span class="icon">✓</span> Brand Identity: Logos, Brandbooks & Style Guides</li>
+                                <li><span class="icon">✓</span> Marketing & High-Converting Social Media Creatives</li>
+                                <li><span class="icon">✓</span> Adobe Photoshop & Illustrator Mastery</li>
+                                <li><span class="icon">✓</span> Client Presentation & Behance/Dribbble Portfolio</li>
+                            </ul>
+                            <div class="prog-tools">
+                                <span>Photoshop</span><span>Illustrator</span><span>Canva
+                                    Pro</span><span>Branding</span><span>Typography</span>
+                            </div>
+                        </div>
+                        <div class="prog-action">
+                            <button class="btn btn-primary" onclick="switchTrack('graphic')" style="flex:1">View
+                                Syllabus ↓</button>
+                            <a class="btn btn-ghost" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
+                                rel="noopener noreferrer">Enroll ↗</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="approach">
             <div class="wrap">
                 <div class="section-head">
@@ -1226,32 +1525,32 @@
                     <article class="card">
                         <div class="iconbox">⌘</div>
                         <h3>Learn by building</h3>
-                        <p>Turn concepts into working features, APIs, and complete apps instead of only following video
-                            tutorials.</p>
+                        <p>Turn concepts into working features, interactive prototypes, and production branding assets
+                            rather than just watching tutorials.</p>
                     </article>
                     <article class="card">
                         <div class="iconbox">↗</div>
                         <h3>Projects for your portfolio</h3>
-                        <p>Build practical projects you can deploy, document, discuss, and keep improving after the
-                            course.</p>
+                        <p>Build practical projects and case studies you can deploy, publish on GitHub/Behance, and
+                            confidently present in interviews.</p>
                     </article>
                     <article class="card">
                         <div class="iconbox">⌕</div>
                         <h3>Placement preparation</h3>
-                        <p>Practise JavaScript questions, coding problems, project walkthroughs, and mock interviews.
-                        </p>
+                        <p>Technical coding tests or design critique challenges, portfolio storytelling, and 1-on-1 mock
+                            interviews.</p>
                     </article>
                     <article class="card">
                         <div class="iconbox">◈</div>
                         <h3>Mentor feedback</h3>
-                        <p>Learn to debug, read code, take feedback, and improve your solutions through structured
-                            reviews.</p>
+                        <p>Learn to iterate, receive structured design/code reviews, and polish your work to industry
+                            quality standards.</p>
                     </article>
                     <article class="card">
                         <div class="iconbox">◎</div>
-                        <h3>Developer workflow</h3>
-                        <p>Use Git and GitHub, work with branches, write useful README files, and understand how apps
-                            are deployed.</p>
+                        <h3>Professional workflow</h3>
+                        <p>Master modern team workflows: Git version control for developers, Figma design systems &
+                            handoff for designers.</p>
                     </article>
                     <article class="card">
                         <div class="iconbox">₹</div>
@@ -1262,86 +1561,266 @@
                 </div>
             </div>
         </section>
+
+        <!-- MULTI-TRACK CURRICULUM SECTION -->
         <section class="curriculum" id="curriculum">
-            <div class="wrap curriculum-grid">
-                <div class="sticky-note">
-                    <div class="kicker">The learning path</div>
-                    <h2>From coding basics to full-stack projects.</h2>
-                    <p>Build your foundation, learn a modern JavaScript stack, and practise the skills that help you
-                        work on real applications.</p>
-                    <div class="pillrow"><span class="pill">HTML / CSS</span><span class="pill">JavaScript</span><span
-                            class="pill">React</span><span class="pill">Node.js</span><span
-                            class="pill">MongoDB</span><span class="pill">Git</span></div><a class="btn btn-primary"
-                        href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank" rel="noopener noreferrer">Request
-                        full syllabus ↗</a>
-                </div>
-                <div class="modules">
-                    <div class="module">
-                        <div class="module-num">01</div>
-                        <div>
-                            <h3>Web development foundations</h3>
-                            <p>HTML, CSS, responsive design, JavaScript fundamentals, async code, and browser tools.</p>
-                        </div>
-                        <div class="weeks">FOUNDATION</div>
-                    </div>
-                    <div class="module">
-                        <div class="module-num">02</div>
-                        <div>
-                            <h3>Frontend with React</h3>
-                            <p>Components, props, state, forms, routing, reusable UI, accessibility, and API
-                                integration.</p>
-                        </div>
-                        <div class="weeks">FRONTEND</div>
-                    </div>
-                    <div class="module">
-                        <div class="module-num">03</div>
-                        <div>
-                            <h3>Backend development</h3>
-                            <p>Node.js, Express, REST APIs, authentication, validation, error handling, and security
-                                basics.</p>
-                        </div>
-                        <div class="weeks">BACKEND</div>
-                    </div>
-                    <div class="module">
-                        <div class="module-num">04</div>
-                        <div>
-                            <h3>Databases & deployment</h3>
-                            <p>MongoDB, data modelling, environment variables, Git workflows, testing, and deployment.
-                            </p>
-                        </div>
-                        <div class="weeks">PRODUCTION</div>
-                    </div>
-                    <div class="module">
-                        <div class="module-num">05</div>
-                        <div>
-                            <h3>Portfolio capstone project</h3>
-                            <p>Build an end-to-end app, document the architecture, fix bugs, and publish a live demo.
-                            </p>
-                        </div>
-                        <div class="weeks">BUILD</div>
-                    </div>
-                    <div class="module">
-                        <div class="module-num">06</div>
-                        <div>
-                            <h3>Placement preparation studio</h3>
-                            <p>Resume and GitHub review, coding practice, mock interviews, and project storytelling.</p>
-                        </div>
-                        <div class="weeks">CAREER</div>
+            <div class="wrap">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <div class="kicker">Curriculum Breakdown</div>
+                    <h2 style="font-size:clamp(30px,4vw,44px); letter-spacing:-.05em; margin: 10px 0;">Explore What
+                        You'll Master</h2>
+                    <p style="color:var(--muted); font-size:14px; max-width:600px; margin: 0 auto 25px;">Select a course
+                        to inspect its module-by-module syllabus and learning outcomes.</p>
+
+                    <!-- Course Switcher Tabs -->
+                    <div class="course-tabs">
+                        <button class="tab-btn active" id="tab-dev" onclick="switchTrack('dev')">⚡ Full Stack
+                            Development</button>
+                        <button class="tab-btn" id="tab-uiux" onclick="switchTrack('uiux')">✦ UI/UX Product
+                            Design</button>
+                        <button class="tab-btn" id="tab-graphic" onclick="switchTrack('graphic')">★ Graphic
+                            Designing</button>
                     </div>
                 </div>
+
+                <!-- 1. FULL STACK CURRICULUM BLOCK -->
+                <div class="curriculum-content-block active" id="track-dev">
+                    <div class="curriculum-grid">
+                        <div class="sticky-note">
+                            <div class="kicker">Full Stack Path</div>
+                            <h2>From coding basics to full-stack projects.</h2>
+                            <p>Build your foundation, learn a modern JavaScript stack, and practise the skills that help
+                                you work on real applications.</p>
+                            <div class="pillrow"><span class="pill">HTML / CSS</span><span
+                                    class="pill">JavaScript</span><span class="pill">React</span><span
+                                    class="pill">Node.js</span><span class="pill">MongoDB</span><span
+                                    class="pill">Git</span></div>
+                            <a class="btn btn-primary" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
+                                rel="noopener noreferrer">Request full syllabus ↗</a>
+                        </div>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-num">01</div>
+                                <div>
+                                    <h3>Web development foundations</h3>
+                                    <p>HTML5, semantic markup, modern CSS3 layout (Flexbox/Grid), JavaScript ES6+
+                                        fundamentals, async programming, and DOM manipulation.</p>
+                                </div>
+                                <div class="weeks">FOUNDATION</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">02</div>
+                                <div>
+                                    <h3>Frontend engineering with React</h3>
+                                    <p>Component hierarchy, hooks (useState, useEffect, useMemo), state management,
+                                        routing, reusable component systems, and REST API consumption.</p>
+                                </div>
+                                <div class="weeks">FRONTEND</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">03</div>
+                                <div>
+                                    <h3>Backend & API architecture</h3>
+                                    <p>Node.js, Express server setup, RESTful API conventions, JWT authentication,
+                                        request validation, middleware, error handling, and security basics.</p>
+                                </div>
+                                <div class="weeks">BACKEND</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">04</div>
+                                <div>
+                                    <h3>Databases, Cloud & DevOps</h3>
+                                    <p>MongoDB NoSQL schema modeling, Mongoose ODM, index optimization, environment
+                                        variables, Git team workflows, and cloud deployments (Vercel/Render).</p>
+                                </div>
+                                <div class="weeks">PRODUCTION</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">05</div>
+                                <div>
+                                    <h3>Production capstone product</h3>
+                                    <p>Build a full-scale web product from scratch, write technical documentation,
+                                        implement responsive UI, stress test, and publish a live demo.</p>
+                                </div>
+                                <div class="weeks">BUILD</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">06</div>
+                                <div>
+                                    <h3>Placement preparation studio</h3>
+                                    <p>Resume & GitHub portfolio review, data structures & algorithms problem practice,
+                                        live coding challenges, and mock technical interviews.</p>
+                                </div>
+                                <div class="weeks">CAREER</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. UI/UX DESIGN CURRICULUM BLOCK -->
+                <div class="curriculum-content-block" id="track-uiux">
+                    <div class="curriculum-grid">
+                        <div class="sticky-note">
+                            <div class="kicker">UI/UX Design Path</div>
+                            <h2>From user empathy to production Figma systems.</h2>
+                            <p>Learn end-to-end digital product design. Conduct user research, formulate information
+                                architecture, craft polished UI components, and build clickable prototypes.</p>
+                            <div class="pillrow"><span class="pill">User Research</span><span
+                                    class="pill">Wireframing</span><span class="pill">Figma</span><span
+                                    class="pill">Design Systems</span><span class="pill">Prototyping</span><span
+                                    class="pill">UX Laws</span></div>
+                            <a class="btn btn-primary" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
+                                rel="noopener noreferrer">Request UI/UX syllabus ↗</a>
+                        </div>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-num">01</div>
+                                <div>
+                                    <h3>Design thinking & UX research</h3>
+                                    <p>User-centered design methodologies, conducting user interviews, competitive
+                                        benchmarking, user personas, empathy maps, and problem statement synthesis.</p>
+                                </div>
+                                <div class="weeks">RESEARCH</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">02</div>
+                                <div>
+                                    <h3>Information architecture & wireframing</h3>
+                                    <p>User flows, site mapping, low-fidelity wireframing in FigJam, visual hierarchy,
+                                        Hick's Law, Fitts's Law, and usability heuristic evaluation.</p>
+                                </div>
+                                <div class="weeks">STRUCTURE</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">03</div>
+                                <div>
+                                    <h3>Visual UI design fundamentals</h3>
+                                    <p>Color theory for digital screens, 8pt spacing system, typography scales,
+                                        accessibility standards (WCAG contrast), and aesthetic consistency.</p>
+                                </div>
+                                <div class="weeks">VISUAL UI</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">04</div>
+                                <div>
+                                    <h3>Advanced Figma & design systems</h3>
+                                    <p>Auto-layout 5.0, responsive constraints, nested components, component properties
+                                        & variants, design token management, and icon libraries.</p>
+                                </div>
+                                <div class="weeks">SYSTEMS</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">05</div>
+                                <div>
+                                    <h3>High-fidelity prototyping & usability testing</h3>
+                                    <p>Complex smart animate micro-interactions, interactive state transitions,
+                                        conducting unmoderated usability tests, and design iteration.</p>
+                                </div>
+                                <div class="weeks">PROTOTYPE</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">06</div>
+                                <div>
+                                    <h3>Case study development & portfolio launch</h3>
+                                    <p>Writing compelling product case studies for Notion, Behance, and web portfolios;
+                                        design critique preparation, and design interview defense.</p>
+                                </div>
+                                <div class="weeks">CAREER</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. GRAPHIC DESIGNING CURRICULUM BLOCK -->
+                <div class="curriculum-content-block" id="track-graphic">
+                    <div class="curriculum-grid">
+                        <div class="sticky-note">
+                            <div class="kicker">Graphic Design Path</div>
+                            <h2>From graphic design basics to brand identity master.</h2>
+                            <p>Master visual communication, digital compositing, vector art, editorial layouts, and
+                                high-impact commercial branding packages that attract clients.</p>
+                            <div class="pillrow"><span class="pill">Photoshop</span><span
+                                    class="pill">Illustrator</span><span class="pill">Typography</span><span
+                                    class="pill">Branding</span><span class="pill">Print & Digital</span><span
+                                    class="pill">Advertising</span></div>
+                            <a class="btn btn-primary" href="https://forms.gle/pXooSZz22ixvgx2N6" target="_blank"
+                                rel="noopener noreferrer">Request Graphic Design syllabus ↗</a>
+                        </div>
+                        <div class="modules">
+                            <div class="module">
+                                <div class="module-num">01</div>
+                                <div>
+                                    <h3>Visual communication & fundamentals</h3>
+                                    <p>Principles of design: balance, contrast, rhythm, proportion, focal points, color
+                                        psychology, and grid-based composition layout.</p>
+                                </div>
+                                <div class="weeks">FOUNDATION</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">02</div>
+                                <div>
+                                    <h3>Adobe Photoshop for digital creators</h3>
+                                    <p>Non-destructive photo editing, clipping masks, pen tool precision cutting, layer
+                                        blending modes, lighting manipulation, and digital composites.</p>
+                                </div>
+                                <div class="weeks">PHOTOSHOP</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">03</div>
+                                <div>
+                                    <h3>Adobe Illustrator & vector illustration</h3>
+                                    <p>Vector drawing, custom iconography, bezier curve control, pattern creation,
+                                        typography lettering, and scalable graphic elements.</p>
+                                </div>
+                                <div class="weeks">ILLUSTRATOR</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">04</div>
+                                <div>
+                                    <h3>Brand identity & logo design</h3>
+                                    <p>Logo ideation, wordmarks and symbols, creating cohesive brand guidelines, color
+                                        palettes, typography pairings, and stationery mockups.</p>
+                                </div>
+                                <div class="weeks">BRANDING</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">05</div>
+                                <div>
+                                    <h3>Social media & advertising design</h3>
+                                    <p>Creating high-converting marketing banners, carousel designs, campaign
+                                        key-visuals, YouTube thumbnails, and digital ad sets.</p>
+                                </div>
+                                <div class="weeks">CAMPAIGNS</div>
+                            </div>
+                            <div class="module">
+                                <div class="module-num">06</div>
+                                <div>
+                                    <h3>Behance/Dribbble portfolio & client prep</h3>
+                                    <p>Building high-converting portfolio mockups, presenting commercial design work,
+                                        freelance pricing strategies, and creative agency interview prep.</p>
+                                </div>
+                                <div class="weeks">PORTFOLIO</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
+
+        <!-- PROJECTS & CASE STUDIES SECTION -->
         <section id="projects">
             <div class="wrap">
                 <div class="section-head">
                     <div>
-                        <div class="kicker">Your work speaks</div>
-                        <h2>Build projects you can explain with confidence.</h2>
+                        <div class="kicker">Real Student Deliverables</div>
+                        <h2>Portfolio projects you can explain with confidence.</h2>
                     </div>
-                    <p>Practice real product patterns, learn to make trade-offs, and create portfolio work that
-                        demonstrates your skills.</p>
+                    <p>Practice real product and design challenges, create standout case studies, and graduate with work
+                        that gets you hired.</p>
                 </div>
                 <div class="project-grid">
+                    <!-- Web Dev Project -->
                     <article class="project">
                         <div class="project-art">
                             <div class="window">
@@ -1356,20 +1835,27 @@
                                 <div class="chartline"></div>
                             </div>
                         </div>
-                        <div class="project-content"><span class="tag">FULL-STACK PRODUCT</span>
-                            <h3>Student productivity dashboard</h3>
-                            <p>Create an app with secure accounts, task tracking, progress charts, search, and a
-                                documented API.</p>
-                            <div class="tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>REST
-                                    API</span></div>
+                        <div class="project-content"><span class="tag">FULL-STACK WEB APP</span>
+                            <h3>Student productivity & LMS dashboard</h3>
+                            <p>Build a secure SaaS app with user auth, Kanban task boards, study analytics, and a
+                                documented Node.js REST API.</p>
+                            <div class="tech">
+                                <span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span></div>
                         </div>
                     </article>
+
+                    <!-- UI/UX Project -->
                     <article class="project">
                         <div class="project-art purpleart">
                             <div class="window">
                                 <div class="window-head"><i></i><i></i><i></i></div>
                                 <div style="display:flex;gap:12px;margin-top:15px">
-                                    <div style="width:30%;height:100px;border-radius:8px;background:#3c365c"></div>
+                                    <div
+                                        style="width:32%;height:100px;border-radius:10px;background:#3c365c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px">
+                                        <div style="width:24px;height:24px;border-radius:6px;background:var(--lime)">
+                                        </div>
+                                        <div style="width:60%;height:4px;background:#c5baff;border-radius:2px"></div>
+                                    </div>
                                     <div style="flex:1">
                                         <div
                                             style="height:8px;width:70%;background:#c5baff;border-radius:4px;margin:6px 0 12px">
@@ -1387,18 +1873,91 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-content"><span class="tag">COMMUNITY APP</span>
-                            <h3>Learning resource platform</h3>
-                            <p>Build resource discovery, user profiles, saved learning progress, responsive pages, and
-                                thoughtful empty states.</p>
+                        <div class="project-content"><span class="tag"
+                                style="color:#c9fa68;background:#c9fa6816;border-color:#c9fa6830">UI/UX CASE
+                                STUDY</span>
+                            <h3>Fintech mobile banking application</h3>
+                            <p>End-to-end design from user interviews and personas to high-fidelity Figma components,
+                                interactive micro-animations, and usability audits.</p>
                             <div class="tech">
-                                <span>Next.js</span><span>Authentication</span><span>Database</span><span>Deployment</span>
+                                <span>Figma</span><span>Design System</span><span>User Testing</span><span>Interactive
+                                    Prototype</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Graphic Design Project 1 -->
+                    <article class="project">
+                        <div class="project-art" style="background:linear-gradient(135deg,#36251b,#1c1920)">
+                            <div class="window">
+                                <div class="window-head"><i></i><i></i><i></i></div>
+                                <div
+                                    style="display:flex;align-items:center;justify-content:center;height:100px;flex-direction:column;gap:8px">
+                                    <div style="font-size:24px;font-weight:900;letter-spacing:-1px;color:#ffaa5a">
+                                        AURORA<span style="color:var(--lime)">.</span></div>
+                                    <div style="font-size:9px;color:#a3a19b;letter-spacing:3px">ARTISAN COFFEE ROASTERS
+                                    </div>
+                                    <div style="display:flex;gap:6px;margin-top:4px">
+                                        <span
+                                            style="width:14px;height:14px;border-radius:3px;background:#ffaa5a"></span>
+                                        <span
+                                            style="width:14px;height:14px;border-radius:3px;background:#c9fa68"></span>
+                                        <span
+                                            style="width:14px;height:14px;border-radius:3px;background:#2d2621"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content"><span class="tag"
+                                style="color:#ffaa5a;background:#ffaa5a18;border-color:#ffaa5a30">BRAND IDENTITY
+                                SYSTEM</span>
+                            <h3>Complete commercial brandbook & packaging</h3>
+                            <p>Design brand guidelines, custom vector mark, color psychology guide, sustainable product
+                                packaging, and business stationery.</p>
+                            <div class="tech">
+                                <span>Adobe Illustrator</span><span>Photoshop</span><span>Packaging
+                                    Design</span><span>Brandbook</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Graphic Design Project 2 -->
+                    <article class="project">
+                        <div class="project-art" style="background:linear-gradient(135deg,#1f2937,#111827)">
+                            <div class="window">
+                                <div class="window-head"><i></i><i></i><i></i></div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+                                    <div
+                                        style="height:80px;border-radius:6px;background:linear-gradient(45deg,#a69bff40,#c9fa6840);padding:8px;display:flex;flex-direction:column;justify-content:space-between">
+                                        <span style="font-size:8px;font-weight:800;color:var(--lime)">SUMMER
+                                            CAMPAIGN</span>
+                                        <span style="font-size:11px;font-weight:800">50% OFF</span>
+                                    </div>
+                                    <div
+                                        style="height:80px;border-radius:6px;background:#282f3c;padding:8px;display:flex;flex-direction:column;justify-content:space-between">
+                                        <span style="font-size:8px;color:#a3b2c8">CAROUSEL AD</span>
+                                        <span style="font-size:10px;font-weight:700;color:#c5baff">Swipe to explore
+                                            →</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content"><span class="tag"
+                                style="color:#a69bff;background:#a69bff18;border-color:#a69bff30">COMMERCIAL
+                                ADVERTISING</span>
+                            <h3>High-converting multi-platform ad campaign</h3>
+                            <p>Develop digital performance marketing creatives for Instagram, LinkedIn, and YouTube,
+                                incorporating custom typography and photo composites.</p>
+                            <div class="tech">
+                                <span>Photoshop</span><span>Advertising</span><span>Social Media</span><span>Visual
+                                    Storytelling</span>
                             </div>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
+
         <section>
             <div class="wrap">
                 <div class="section-head">
@@ -1413,37 +1972,43 @@
                     <div class="step">
                         <div class="num">STEP 01</div>
                         <h3>Learn online</h3>
-                        <p>Understand a concept through guided lessons and practical examples.</p>
+                        <p>Master concepts through live mentor-led sessions, interactive examples, and clear breakdowns.
+                        </p>
                     </div>
                     <div class="step">
                         <div class="num">STEP 02</div>
-                        <h3>Code it yourself</h3>
-                        <p>Complete hands-on tasks and build features from real-world briefs.</p>
+                        <h3>Build real briefs</h3>
+                        <p>Complete hands-on assignments: write production code, design in Figma, or illustrate brand
+                            assets.</p>
                     </div>
                     <div class="step">
                         <div class="num">STEP 03</div>
-                        <h3>Review & improve</h3>
-                        <p>Debug issues, use feedback, and learn to write maintainable code.</p>
+                        <h3>Review & iterate</h3>
+                        <p>Receive critique and constructive feedback from instructors to refine your projects to
+                            professional level.</p>
                     </div>
                     <div class="step">
                         <div class="num">STEP 04</div>
                         <h3>Prepare to interview</h3>
-                        <p>Practise explaining decisions, solving problems, and presenting projects.</p>
+                        <p>Practise explaining decisions, walking through case studies, and handling technical or design
+                            tests.</p>
                     </div>
                 </div>
             </div>
         </section>
+
         <div class="cta">
             <div class="wrap">
                 <div class="cta-box">
                     <div>
-                        <h2>Your first tech role starts with skills you can prove.</h2>
-                        <p>Get the ProCode syllabus, upcoming online batch information, and affordable course details.
-                        </p>
+                        <h2>Your first tech or design role starts with skills you can prove.</h2>
+                        <p>Get the ProCode syllabus, upcoming online batch schedules, and student-friendly fees for Full
+                            Stack, UI/UX, and Graphic Design.</p>
                     </div><button class="btn" onclick="openModal()">Get started with ProCode ↗</button>
                 </div>
             </div>
         </div>
+
         <section id="faq">
             <div class="wrap faq-grid">
                 <div>
@@ -1453,91 +2018,162 @@
                         details.</p>
                 </div>
                 <div>
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Which course is right for
+                                me?</span><span>＋</span></button>
+                        <div class="faq-a">Choose <strong>Full Stack Development</strong> if you enjoy programming,
+                            logic, and building functional applications. Choose <strong>UI/UX Design</strong> if you
+                            love solving user problems, wireframing, and designing app interfaces. Choose
+                            <strong>Graphic Designing</strong> if you enjoy visual arts, branding, illustration, and
+                            marketing creatives. Complete beginners are welcome across all tracks!</div>
+                    </div>
                     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Is ProCode suitable for
                                 college students and freshers?</span><span>＋</span></button>
-                        <div class="faq-a">Yes. The course is designed around building a foundation, completing
-                            practical projects, and preparing to demonstrate your skills in entry-level interviews.
-                            Consistent practice outside class is important.</div>
+                        <div class="faq-a">Yes. Every track is tailored to build strong foundations from scratch, guide
+                            you through hands-on portfolio projects, and prepare you to present your work in entry-level
+                            interviews and internships.</div>
                     </div>
                     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Are the classes
                                 online?</span><span>＋</span></button>
-                        <div class="faq-a">Yes, ProCode is positioned as an online learning program. Confirm the exact
-                            live-session schedule, recordings, mentor support, and attendance expectations with the team
-                            before enrolling.</div>
+                        <div class="faq-a">Yes, ProCode is 100% online. You will attend interactive live sessions,
+                            receive recorded lectures for revision, and get direct mentor support on Discord/chat.</div>
                     </div>
                     <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Will I get a guaranteed job
                                 or placement?</span><span>＋</span></button>
-                        <div class="faq-a">No course can honestly guarantee a job. ProCode focuses on practical skills
-                            and placement preparation to help you become a stronger candidate. Hiring outcomes depend on
-                            your effort, interview performance, and market conditions.</div>
+                        <div class="faq-a">No course can honestly guarantee a job. ProCode focuses on practical skills,
+                            demonstrable portfolio deliverables, and placement prep to maximize your chances. Hiring
+                            outcomes depend on your effort, practice, and market opportunities.</div>
                     </div>
-                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>How much does the course
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>What software or laptop do I
+                                need?</span><span>＋</span></button>
+                        <div class="faq-a">For Full Stack: any reliable laptop capable of running VS Code and a browser.
+                            For UI/UX Design: Figma runs right inside your web browser or desktop app smoothly. For
+                            Graphic Design: a computer capable of running Adobe Photoshop and Illustrator is
+                            recommended.</div>
+                    </div>
+                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>How much does each course
                                 cost?</span><span>＋</span></button>
-                        <div class="faq-a">ProCode is positioned as affordable for students and freshers. The actual
-                            fee, instalment options, duration, and any discounts should be confirmed with the team
-                            before you make a payment.</div>
-                    </div>
-                    <div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Do I need a powerful
-                                laptop?</span><span>＋</span></button>
-                        <div class="faq-a">A reliable laptop or desktop that can run a modern browser, a code editor,
-                            and basic development tools is recommended. Share your device specifications with the team
-                            if you are unsure.</div>
+                        <div class="faq-a">ProCode programs are priced affordably specifically for students and
+                            freshers. Current cohort pricing, payment plans, and student discounts will be shared when
+                            you request details.</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
         <div class="wrap footer-row"><a class="brand" href="#home"><span class="brandmark">P</span> ProCode<span
-                    style="color:var(--lime)">.</span></a><span>Practical learning. Real projects. Career
-                preparation.</span>
-            <div class="footer-links"><a href="#approach">Why ProCode</a><a href="#curriculum">Curriculum</a><a
-                    href="#faq">FAQ</a><a href="#" onclick="openModal();return false">Contact</a></div>
+                    style="color:var(--lime)">.</span></a><span>Practical learning · Full Stack · UI/UX · Graphic
+                Design</span>
+            <div class="footer-links"><a href="#courses">Courses</a><a href="#approach">Why ProCode</a><a
+                    href="#curriculum">Curriculum</a><a href="#faq">FAQ</a><a href="#"
+                    onclick="openModal();return false">Contact</a></div>
         </div>
         <div class="wrap" style="margin-top:20px;color:#6f727c">© <span id="year"></span> ProCode. Built by Atharva
             Wadhai and Pratik More.</div>
     </footer>
+
     <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
         onclick="if(event.target===this)closeModal()">
         <div class="modal"><button class="close" aria-label="Close" onclick="closeModal()">×</button>
             <h2 id="modalTitle">Get ProCode course details.</h2>
-            <p>Tell us a little about yourself to request the syllabus and next online cohort information.</p>
+            <p>Tell us a little about yourself to request the syllabus and upcoming cohort information.</p>
             <form id="interestForm">
                 <div class="field"><label for="name">YOUR NAME</label><input id="name" name="name"
                         placeholder="e.g. Aditi Sharma" required></div>
                 <div class="field"><label for="email">EMAIL ADDRESS</label><input id="email" name="email" type="email"
                         placeholder="you@example.com" required></div>
+                <div class="field"><label for="courseTrack">PROGRAM OF INTEREST</label><select id="courseTrack"
+                        name="courseTrack" required>
+                        <option value="">Select a Program</option>
+                        <option value="Full Stack Development">Full Stack Web Development</option>
+                        <option value="UI/UX Product Design">UI/UX Product Design</option>
+                        <option value="Graphic Designing">Graphic & Brand Design</option>
+                        <option value="Multiple Tracks">Interested in Multiple Tracks</option>
+                    </select></div>
                 <div class="field"><label for="level">YOUR CURRENT LEVEL</label><select id="level" name="level"
                         required>
                         <option value="">Choose one</option>
                         <option>Complete beginner</option>
                         <option>Know the basics</option>
                         <option>Built a few projects</option>
-                        <option>Preparing for interviews</option>
+                        <option>Preparing for internships / placements</option>
                     </select></div>
                 <div class="field"><label for="goal">WHAT WOULD YOU LIKE HELP WITH?</label><select id="goal" name="goal"
                         required>
                         <option value="">Choose one</option>
                         <option>Learn Full Stack Development</option>
+                        <option>Learn UI/UX Product Design</option>
+                        <option>Learn Graphic & Brand Design</option>
                         <option>Build portfolio projects</option>
-                        <option>Prepare for placements</option>
-                        <option>Switch to a developer career</option>
+                        <option>Prepare for placements & internships</option>
+                        <option>Career switch into tech or design</option>
                     </select></div><button class="btn btn-primary" type="submit"
                     style="width:100%;margin-top:8px">Request course details ↗</button>
                 <div class="form-note">Demo form: submissions are not sent to a server. Connect it to your email, CRM,
                     or backend before launch.</div>
-                <div class="success" id="successMsg" role="status">Thanks for your interest in ProCode! This demo form
-                    validated your details. Connect a backend to receive real enquiries.</div>
+                <div class="success" id="successMsg" role="status">Thanks for your interest in ProCode! We have recorded
+                    your interest in the course. We will be in touch shortly!</div>
             </form>
         </div>
     </div>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-        function openModal() { document.getElementById('modalBackdrop').classList.add('show'); document.body.style.overflow = 'hidden'; setTimeout(() => document.getElementById('name').focus(), 50) }
-        function closeModal() { document.getElementById('modalBackdrop').classList.remove('show'); document.body.style.overflow = '' }
+
+        function openModal() {
+            document.getElementById('modalBackdrop').classList.add('show');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.getElementById('name').focus(), 50);
+        }
+
+        function openModalWithTrack(goalValue) {
+            openModal();
+            const goalSelect = document.getElementById('goal');
+            const courseSelect = document.getElementById('courseTrack');
+            if (goalValue.includes('UI/UX')) {
+                courseSelect.value = 'UI/UX Product Design';
+                goalSelect.value = 'Learn UI/UX Product Design';
+            } else if (goalValue.includes('Graphic')) {
+                courseSelect.value = 'Graphic Designing';
+                goalSelect.value = 'Learn Graphic & Brand Design';
+            } else {
+                courseSelect.value = 'Full Stack Development';
+                goalSelect.value = 'Learn Full Stack Development';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modalBackdrop').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        function switchTrack(track) {
+            // Remove active classes from buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            // Remove active class from curriculum blocks
+            document.querySelectorAll('.curriculum-content-block').forEach(block => block.classList.remove('active'));
+
+            const activeBtn = document.getElementById('tab-' + track);
+            const activeBlock = document.getElementById('track-' + track);
+            if (activeBtn) activeBtn.classList.add('active');
+            if (activeBlock) activeBlock.classList.add('active');
+
+            const curriculumSection = document.getElementById('curriculum');
+            if (curriculumSection) {
+                curriculumSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal() });
-        document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => { const item = q.parentElement; const open = item.classList.toggle('open'); q.setAttribute('aria-expanded', String(open)) }));
-        document.getElementById('interestForm').addEventListener('submit', e => { e.preventDefault(); document.getElementById('successMsg').style.display = 'block' });
+        document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const open = item.classList.toggle('open');
+            q.setAttribute('aria-expanded', String(open));
+        }));
+        document.getElementById('interestForm').addEventListener('submit', e => {
+            e.preventDefault();
+            document.getElementById('successMsg').style.display = 'block';
+        });
         document.querySelectorAll('#navlinks a').forEach(a => a.addEventListener('click', () => document.getElementById('navlinks').classList.remove('show')));
     </script>
 </body>
